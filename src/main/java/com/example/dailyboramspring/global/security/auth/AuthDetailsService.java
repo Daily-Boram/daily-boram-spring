@@ -16,7 +16,7 @@ public class AuthDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByAccountId(username)
+        return userRepository.findByEmail(username)
                 .map(AuthDetails::new)
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
