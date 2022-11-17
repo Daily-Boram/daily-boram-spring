@@ -9,7 +9,6 @@ import com.example.dailyboramspring.infrastructure.feign.client.NaverAuthClient;
 import com.example.dailyboramspring.infrastructure.feign.client.NaverGetClient;
 import com.example.dailyboramspring.infrastructure.feign.dto.NaverUserResponse;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
