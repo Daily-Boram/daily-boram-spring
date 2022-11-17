@@ -10,6 +10,7 @@ import org.springframework.boot.context.properties.ConstructorBinding;
 @RequiredArgsConstructor
 @ConfigurationProperties(prefix = "spring.security.oauth2.client.registration.naver")
 public class NaverProperties {
+    
     private final String clientId;
     private final String clientSecret;
     private final String authorizationGrantType;

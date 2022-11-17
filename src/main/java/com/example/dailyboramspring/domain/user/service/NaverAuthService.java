@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class NaverAuthService {
+    
     private final NaverAuthClient naverAuthClient;
     private final NaverGetClient naverGetClient;
     private final NaverProperties naverProperties;

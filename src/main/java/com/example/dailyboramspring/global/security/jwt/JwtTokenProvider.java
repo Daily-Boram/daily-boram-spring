@@ -19,6 +19,7 @@ import java.util.Date;
 @RequiredArgsConstructor
 @Component
 public class JwtTokenProvider {
+
     private final AuthDetailsService authDetailsService;
     private final JwtProperties jwtProperties;
 

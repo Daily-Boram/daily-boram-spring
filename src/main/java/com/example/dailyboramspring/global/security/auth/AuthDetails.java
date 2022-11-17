@@ -10,6 +10,7 @@ import java.util.Collections;
 
 @RequiredArgsConstructor
 public class AuthDetails implements UserDetails {
+
     private final User user;
 
     @Override

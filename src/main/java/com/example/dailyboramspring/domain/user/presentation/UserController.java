@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 public class UserController {
+
     private final NaverAuthService naverAuthService;
 
     @GetMapping("/login/oauth2/code/naver")

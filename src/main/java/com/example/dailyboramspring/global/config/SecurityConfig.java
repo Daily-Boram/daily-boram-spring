@@ -15,6 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig {
+    
     private final ObjectMapper objectMapper;
     private final JwtTokenProvider jwtTokenProvider;
 
