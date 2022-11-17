@@ -18,8 +18,8 @@ public class User {
     private Long id;
 
     @NotNull
-    @Column(columnDefinition = "VARCHAR(30)")
-    private String accountId;
+    @Column(columnDefinition = "VARCHAR(320)")
+    private String email;
 
     @NotNull
     @Column(columnDefinition = "CHAR(1)")
@@ -34,8 +34,8 @@ public class User {
     private String phoneNumber;
 
     @Builder
-    public User(String accountId, String gender, String age, String phoneNumber) {
-        this.accountId = accountId;
+    public User(String email, String gender, String age, String phoneNumber) {
+        this.email = email;
         this.gender = gender;
         this.age = age;
         this.phoneNumber = phoneNumber;
