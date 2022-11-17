@@ -23,6 +23,8 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.5'
+
 
     implementation group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.6.3'
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
