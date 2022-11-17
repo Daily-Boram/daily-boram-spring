@@ -32,10 +32,10 @@ public class NaverAuthService {
 
         NaverUserResponse.Response response = naverGetClient.get(token).getResponse();
 
-        if (userRepository.findByAccountId(response.getEmail()).isEmpty()) {
+        if (userRepository.findByEmail(response.getEmail()).isEmpty()) {
             userRepository.save(
                     User.builder()
-                            .accountId(response.getEmail())
+                            .email(response.getEmail())
                             .gender(response.getGender())
                             .age(response.getAge())
                             .phoneNumber(response.getMobile())
