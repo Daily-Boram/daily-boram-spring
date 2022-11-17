@@ -1,4 +1,4 @@
-name: v1-service-feed - CI
+name: daily-boram - CI
 
 on:
   push:
