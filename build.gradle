@@ -26,10 +26,25 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.5'
 
 
+    implementation group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.6.3'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '3.1.1'
+
+    runtimeOnly 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 }
 
-tasks.named('test') {
+test {
     useJUnitPlatform()
+}
+
+jar {
+    enabled = false
 }

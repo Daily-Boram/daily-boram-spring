@@ -5,6 +5,7 @@ import com.example.dailyboramspring.global.error.exception.GlobalException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -41,7 +42,7 @@ public class ExceptionFilter extends OncePerRequestFilter {
         String errorResponseJson = objectMapper.writeValueAsString(errorResponse);
 
         response.setStatus(errorCode.getStatus());
-        response.setContentType("application/json");
+        response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.getWriter().write(errorResponseJson);
     }
 }
