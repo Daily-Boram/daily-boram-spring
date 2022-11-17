@@ -17,7 +17,6 @@ public class NaverUserResponse {
         private String gender;
         private String email;
         private String age;
-        private String moblie;
-        private String moblieE164;
+        private String mobile;
     }
 }

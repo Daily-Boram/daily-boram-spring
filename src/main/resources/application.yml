@@ -7,7 +7,7 @@ spring:
             client-id: ${CLIENT_ID}
             client-secret: ${CLIENT_SECRET}
             redirect-uri: ${REDIRECT_URL}
-            authorization-grant-type: ${AUTHGRANTTYPE}
+            authorization-grant-type: ${AUTH_GRANT_TYPE}
             scope: ${SCOPE}
             client-name: ${CLIENT_NAME}
         provider:
@@ -39,3 +39,10 @@ jwt:
   access-exp: ${JWT_ACCESS_EXP}
   jwt-header: ${JWT_HEADER}
   jwt-prefix: ${JWT_PREFIX}
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 10000

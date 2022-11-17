@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @RequiredArgsConstructor
 @Service
 public class NaverAuthService {
@@ -31,8 +30,6 @@ public class NaverAuthService {
                 code
         ).getAccessToken();
 
-        log.info(token);
-
         NaverUserResponse.Response response = naverGetClient.get(token).getResponse();
 
         if (userRepository.findByAccountId(response.getEmail()).isEmpty()) {
@@ -41,7 +38,7 @@ public class NaverAuthService {
                             .accountId(response.getEmail())
                             .gender(response.getGender())
                             .age(response.getAge())
-                            .phoneNumber(response.getMoblie())
+                            .phoneNumber(response.getMobile())
                             .build()
             );
         }
