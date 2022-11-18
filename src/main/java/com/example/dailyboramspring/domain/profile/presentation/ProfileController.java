@@ -17,7 +17,7 @@ public class ProfileController {
     private final GetMyUserProfileService getMyUserProfileService;
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/ohter/{user_id}")
+    @GetMapping("/other/{user_id}")
     public UserProfileResponse getUserProfile(@PathVariable(name = "user_id") Long id) {
         return getUserProfileService.execute(id);
     }
