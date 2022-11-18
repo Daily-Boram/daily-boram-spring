@@ -32,7 +32,7 @@ public class Series {
     @Column(columnDefinition = "VARCHAR(500)")
     private String image;
 
-    public Series(User user, String title, String summary, String image){
+    public Series(User user, String title, String summary, String image) {
         this.user = user;
         this.title = title;
         this.summary = summary;

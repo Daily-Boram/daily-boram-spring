@@ -12,7 +12,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @RequiredArgsConstructor
 public class FilterConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
-    
+
     private final ObjectMapper objectMapper;
     private final JwtTokenProvider jwtTokenProvider;
 
