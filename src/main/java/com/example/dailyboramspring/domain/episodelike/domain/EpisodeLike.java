@@ -1,6 +1,6 @@
-package com.example.dailyboramspring.domain.serieslike.domain;
+package com.example.dailyboramspring.domain.episodelike.domain;
 
-import com.example.dailyboramspring.domain.series.domain.Series;
+import com.example.dailyboramspring.domain.episode.domain.Episode;
 import com.example.dailyboramspring.domain.user.domain.User;
 import lombok.*;
 
@@ -10,22 +10,22 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Table(name = "tbl_series_like",
-        uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "series_id"})
+@Table(name = "tbl_episode_like",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "episode_id"})
 )
 @Entity
-public class SeriesLike {
+public class EpisodeLike {
 
     @EmbeddedId
-    private SeriesLikeId id;
+    private EpisodeLikeId id;
 
     @MapsId("userId")
     @JoinColumn(name = "user_id", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @MapsId("seriesId")
-    @JoinColumn(name = "series_id", nullable = false)
+    @MapsId("episodeId")
+    @JoinColumn(name = "episode_id", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
-    private Series series;
+    private Episode episode;
 }

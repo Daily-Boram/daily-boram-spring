@@ -25,6 +25,8 @@ public enum ErrorCode {
 
     LIKE_NOT_FOUND(404, "LIKE-404-1", "Like Not Found"),
 
+    SERIES_NOT_FOUND(404, "SERIES-404-1", "Series Not Found"),
+
     NOTIFICATION_NOT_FOUND(404, "NOTIFICATION-404-1", "Notification Not Found"),
 
     COMMENT_NOT_FOUND(404, "COMMENT-404-1", "Comment Not Found"),

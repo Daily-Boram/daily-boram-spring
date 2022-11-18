@@ -14,6 +14,9 @@ import javax.persistence.*;
 public class Genre {
 
     @Id
+    private Long id;
+
+    @MapsId
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "series_id", nullable = false)
     private Series series;

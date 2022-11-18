@@ -14,12 +14,16 @@ public class UserFacade {
 
     private final UserRepository userRepository;
 
-    public User getCurrentUser(){
+    public User getCurrentUser() {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
-        return getUserById(email);
+        return getUserByEmail(email);
     }
 
-    public User getUserById(String email){
+    public User getUserByEmail(String email) {
         return userRepository.findByEmail(email).orElseThrow(() -> UserNotFoundException.EXCEPTION);
+    }
+
+    public User getUserById(Long id) {
+        return userRepository.findById(id).orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
 }

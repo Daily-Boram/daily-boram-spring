@@ -15,7 +15,10 @@ import javax.validation.constraints.NotNull;
 public class Profile {
 
     @Id
-    @JoinColumn(name = "id", nullable = false)
+    private Long Id;
+
+    @MapsId
+    @JoinColumn(name = "user_id", nullable = false)
     @OneToOne(fetch = FetchType.LAZY)
     private User user;
 
