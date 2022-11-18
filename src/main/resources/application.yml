@@ -16,7 +16,7 @@ spring:
             token-uri: ${TOKEN_URL:https://nid.naver.com/oauth2.0/token}
             user-info-uri: ${USER_INFO_URL:https://openapi.naver.com/v1/nid/me}
             user-name-attribute: ${RESPONSE:response}
-            
+
   jackson:
     property-naming-strategy: SNAKE_CASE
 
