@@ -20,12 +20,12 @@ public class SeriesLike {
     private SeriesLikeId id;
 
     @MapsId("userId")
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
     @MapsId("seriesId")
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "series_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Series series;
 }
