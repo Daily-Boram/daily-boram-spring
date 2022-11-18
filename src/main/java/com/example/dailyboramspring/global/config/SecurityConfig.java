@@ -32,9 +32,14 @@ public class SecurityConfig {
                 .authorizeRequests()
 
                 .antMatchers(HttpMethod.GET, "/login/oauth2/code/naver").permitAll()
+                
+                .antMatchers(HttpMethod.POST, "/series").authenticated()
+                
                 .antMatchers(HttpMethod.POST, "/episode/{series-id}").permitAll()
+                
                 .antMatchers(HttpMethod.GET, "/profile/other/{user_id}").permitAll()
                 .antMatchers(HttpMethod.GET, "/profile/me").permitAll()
+                
                 .anyRequest().authenticated()
                 .and()
                 .apply(new FilterConfig(objectMapper, jwtTokenProvider));
