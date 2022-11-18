@@ -17,7 +17,7 @@ public class Series {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @NotNull
@@ -32,6 +32,7 @@ public class Series {
     @Column(columnDefinition = "VARCHAR(500)")
     private String image;
 
+    @Builder
     public Series(User user, String title, String summary, String image) {
         this.user = user;
         this.title = title;
