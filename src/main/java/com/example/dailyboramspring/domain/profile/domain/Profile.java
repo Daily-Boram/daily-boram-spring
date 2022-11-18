@@ -36,4 +36,10 @@ public class Profile {
     @NotNull
     @Column(columnDefinition = "INT")
     private Integer cookie;
+
+    public void changeProfile(String nickname, String image, String introduce) {
+        this.nickname = nickname;
+        this.image = image;
+        this.introduce = introduce;
+    }
 }
