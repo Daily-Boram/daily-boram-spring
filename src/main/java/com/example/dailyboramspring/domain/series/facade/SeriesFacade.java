@@ -20,7 +20,7 @@ public class SeriesFacade {
         return seriesRepository.findById(seriesId)
                 .orElseThrow(() -> SeriesNotFoundException.EXCEPTION);
     }
-    
+
     public List<Series> GetAllSeriesByUser(User user) {
         return seriesRepository.findAllByUser(user);
     }

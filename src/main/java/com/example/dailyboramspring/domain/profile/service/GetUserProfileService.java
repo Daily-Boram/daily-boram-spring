@@ -27,15 +27,13 @@ public class GetUserProfileService {
     private final SeriesLikeFacade seriesLikeFacade;
 
 
-    public UserProfileResponse excute(Long id) {
+    public UserProfileResponse execute(Long id) {
 
         User user = userFacade.getUserById(id);
 
         Profile profile = profileFacade.getProfileById(user.getId());
 
-        List<Series> seriesList = seriesFacade.GetAllSeriesByUser(user);
-
-        List<SeriesElement> noticeList = seriesList
+        List<SeriesElement> noticeList = seriesFacade.GetAllSeriesByUser(user)
                 .stream()
                 .map(series -> SeriesElement.builder()
                         .title(series.getTitle())
