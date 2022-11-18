@@ -1,6 +1,7 @@
 package com.example.dailyboramspring.domain.profile.domain;
 
 import com.example.dailyboramspring.domain.user.domain.User;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "tbl_profile")
 public class Profile {
