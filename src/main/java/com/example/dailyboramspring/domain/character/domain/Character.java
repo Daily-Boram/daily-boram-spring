@@ -27,7 +27,7 @@ public class Character {
     private String name;
 
     @NotNull
-    @Column(columnDefinition = "VARCAHR(500)")
+    @Column(columnDefinition = "VARCHAR(500)")
     private String image;
 
 }
