@@ -20,7 +20,7 @@ public class CreateSeries {
     private final GenreRepository genreRepository;
 
     @Transactional
-    public void execute(CreateSeriesRequest createSeriesRequest){
+    public void execute(CreateSeriesRequest createSeriesRequest) {
         User user = userFacade.getCurrentUser();
 
         Series series = Series.builder()
@@ -31,7 +31,7 @@ public class CreateSeries {
                 .build();
         seriesRepository.save(series);
 
-        for(String i: createSeriesRequest.getGenre()){
+        for (String i : createSeriesRequest.getGenre()) {
             Genre genre = Genre.builder()
                     .series(series)
                     .genre(i)

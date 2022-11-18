@@ -15,7 +15,7 @@ public class SeriesController {
 
     private final CreateSeries createSeries;
 
-    public void postSeries(@RequestBody CreateSeriesRequest request){
+    public void postSeries(@RequestBody CreateSeriesRequest request) {
         createSeries.execute(request);
     }
 }
