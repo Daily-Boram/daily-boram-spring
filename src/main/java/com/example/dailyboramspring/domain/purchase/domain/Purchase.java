@@ -6,7 +6,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Table(name = "tbl_content")
+@Table(name = "tbl_purchase")
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
