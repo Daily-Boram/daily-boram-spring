@@ -1,22 +1,21 @@
 package com.example.dailyboramspring.domain.profile.domain;
 
 import com.example.dailyboramspring.domain.user.domain.User;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Builder
 @Entity
 @Table(name = "tbl_profile")
 public class Profile {
 
     @Id
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id", nullable = false)
     @OneToOne(fetch = FetchType.LAZY)
     private User user;
 
