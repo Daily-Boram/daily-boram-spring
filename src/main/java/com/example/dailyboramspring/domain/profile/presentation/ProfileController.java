@@ -1,12 +1,16 @@
 package com.example.dailyboramspring.domain.profile.presentation;
 
+import com.example.dailyboramspring.domain.profile.presentation.dto.request.UpdateProfileRequest;
 import com.example.dailyboramspring.domain.profile.presentation.dto.response.MyUserProfileResponse;
 import com.example.dailyboramspring.domain.profile.presentation.dto.response.UserProfileResponse;
 import com.example.dailyboramspring.domain.profile.service.GetMyUserProfileService;
 import com.example.dailyboramspring.domain.profile.service.GetUserProfileService;
+import com.example.dailyboramspring.domain.profile.service.UpdateProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RequiredArgsConstructor
 @RequestMapping("/profile")
@@ -15,6 +19,7 @@ public class ProfileController {
 
     private final GetUserProfileService getUserProfileService;
     private final GetMyUserProfileService getMyUserProfileService;
+    private final UpdateProfileService updateProfileService;
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/other/{user_id}")
@@ -26,5 +31,11 @@ public class ProfileController {
     @GetMapping("/me")
     public MyUserProfileResponse getUserProfile() {
         return getMyUserProfileService.execute();
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PatchMapping
+    public void updateProfile(@RequestBody @Valid UpdateProfileRequest updateProfileRequest) {
+        updateProfileService.execute(updateProfileRequest);
     }
 }
