@@ -16,4 +16,8 @@ public class ProfileFacade {
     public Profile getProfileById(long id) {
         return profileRepository.findById(id).orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
+
+    public Boolean existByNickname(String nickname) {
+        return profileRepository.existsByNickname(nickname);
+    }
 }
