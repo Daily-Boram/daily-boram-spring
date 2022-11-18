@@ -5,6 +5,7 @@ import com.example.dailyboramspring.domain.episode.domain.Episode;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Entity
@@ -25,4 +26,8 @@ public class Content {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "character_id", nullable = false)
     private Character character;
+
+    @NotNull
+    @Column(columnDefinition = "VARCHAR(300)")
+    private String line;
 }
