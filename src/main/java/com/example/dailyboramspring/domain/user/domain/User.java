@@ -6,7 +6,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Getter
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Table(name = "tbl_user")
 @Entity
 public class User {
@@ -15,7 +17,7 @@ public class User {
     private Long id;
 
     @NotNull
-    @Column(columnDefinition = "VARCHAR(320)")
+    @Column(columnDefinition = "VARCHAR(100)")
     private String email;
 
     @NotNull
@@ -27,14 +29,6 @@ public class User {
     private String age;
 
     @NotNull
-    @Column(columnDefinition = "CHAR(20)")
+    @Column(columnDefinition = "CHAR(13)")
     private String phoneNumber;
-
-    @Builder
-    public User(String email, String gender, String age, String phoneNumber) {
-        this.email = email;
-        this.gender = gender;
-        this.age = age;
-        this.phoneNumber = phoneNumber;
-    }
 }
