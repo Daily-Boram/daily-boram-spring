@@ -23,12 +23,12 @@ public class Episode {
     private Series series;
 
     @NotNull
-    @Column(columnDefinition = "VARCHAR(25)")
+    @Column(columnDefinition = "VARCHAR(30)")
     private String title;
 
     @NotNull
-    @Column(columnDefinition = "VARCHAR(400)")
-    private String summary;
+    @Column(columnDefinition = "INT")
+    private Integer cost;
 
     @NotNull
     @Column(columnDefinition = "VARCHAR(500)")
