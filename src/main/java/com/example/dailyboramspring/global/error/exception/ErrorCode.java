@@ -14,6 +14,8 @@ public enum ErrorCode {
     PASSWORD_NOT_CORRECT(409, "AUTH-409-1", "Password Not Correct"),
 
     USER_NOT_FOUND(404, "USER-404-1", "User Not Found"),
+
+    SERIES_LIKE_NOT_FOUND(404, "SEIRES_LIKE-404-1", "Seires Like Not Found"),
     USER_NAME_ALREADY_EXISTS(409, "USER-409-1", "User Name Already Exists"),
     INVALID_USER(401, "USER-401-1", "Invalid User"),
 
@@ -29,7 +31,7 @@ public enum ErrorCode {
 
     SERIES_NOT_FOUND(404, "SERIES-404-1", "Series Not Found"),
     EPISODE_NOT_FOUND(404, "EPISODE-404-1", "Episode Not Found"),
-    EPISODE_LIKE_NOT_FOUND(404, "EPISODE_LIKE_NOT_FOUND-1", "Episode Like Not Found"),
+    EPISODE_LIKE_NOT_FOUND(404, "EPISODE_LIKE-NOT-FOUND-404-1", "Episode Like Not Found"),
 
     NOTIFICATION_NOT_FOUND(404, "NOTIFICATION-404-1", "Notification Not Found"),
 
