@@ -43,6 +43,7 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.PATCH, "/profile").permitAll()
 
                 .antMatchers(HttpMethod.POST, "/like/episode/{episode_id}").permitAll()
+                .antMatchers(HttpMethod.DELETE, "/like/episode/{episode_id}").permitAll()
 
                 .anyRequest().authenticated()
                 .and()
