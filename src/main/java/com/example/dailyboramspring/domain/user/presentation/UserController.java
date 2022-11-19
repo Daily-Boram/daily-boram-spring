@@ -30,19 +30,19 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/other/{user_id}")
+    @GetMapping("/profile/other/{user_id}")
     public UserProfileResponse getUserProfile(@PathVariable(name = "user_id") Long id) {
         return getUserProfileService.execute(id);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/me")
+    @GetMapping("/profile/me")
     public MyUserProfileResponse getUserProfile() {
         return getMyUserProfileService.execute();
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PatchMapping
+    @PatchMapping("/profile")
     public void updateProfile(@RequestBody @Valid UpdateProfileRequest updateProfileRequest) {
         updateProfileService.execute(updateProfileRequest);
     }
