@@ -1,8 +1,7 @@
-package com.example.dailyboramspring.domain.profile.service;
+package com.example.dailyboramspring.domain.user.service;
 
-import com.example.dailyboramspring.domain.profile.facade.ProfileFacade;
-import com.example.dailyboramspring.domain.profile.presentation.dto.response.SeriesElement;
-import com.example.dailyboramspring.domain.profile.presentation.dto.response.UserProfileResponse;
+import com.example.dailyboramspring.domain.user.presentation.dto.response.SeriesElement;
+import com.example.dailyboramspring.domain.user.presentation.dto.response.UserProfileResponse;
 import com.example.dailyboramspring.domain.series.facade.SeriesFacade;
 import com.example.dailyboramspring.domain.serieslike.facade.SeriesLikeFacade;
 import com.example.dailyboramspring.domain.user.domain.User;
@@ -18,7 +17,6 @@ import java.util.stream.Collectors;
 public class GetUserProfileService {
 
     private final UserFacade userFacade;
-    private final ProfileFacade profileFacade;
     private final SeriesFacade seriesFacade;
     private final SeriesLikeFacade seriesLikeFacade;
 
@@ -27,22 +25,20 @@ public class GetUserProfileService {
 
         User user = userFacade.getUserById(id);
 
-        Profile profile = profileFacade.getProfileById(user.getId());
-
         List<SeriesElement> noticeList = seriesFacade.GetAllSeriesByUser(user)
                 .stream()
                 .map(series -> SeriesElement.builder()
                         .title(series.getTitle())
-                        .nickname(profile.getNickname())
+                        .nickname(user.getNickname())
                         .image(series.getImage())
                         .like(seriesLikeFacade.getCountBySeries(series))
                         .build())
                 .collect(Collectors.toList());
 
         return new UserProfileResponse(
-                profile.getNickname(),
-                profile.getImage(),
-                profile.getIntroduce(),
+                user.getNickname(),
+                user.getImage(),
+                user.getIntroduce(),
                 noticeList
         );
     }

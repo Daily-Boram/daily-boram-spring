@@ -1,4 +1,4 @@
-package com.example.dailyboramspring.domain.profile.exception;
+package com.example.dailyboramspring.domain.user.exception;
 
 import com.example.dailyboramspring.global.error.exception.ErrorCode;
 import com.example.dailyboramspring.global.error.exception.GlobalException;
