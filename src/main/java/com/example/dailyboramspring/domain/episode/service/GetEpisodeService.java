@@ -3,6 +3,7 @@ package com.example.dailyboramspring.domain.episode.service;
 import com.example.dailyboramspring.domain.content.facade.ContentFacade;
 import com.example.dailyboramspring.domain.episode.domain.Episode;
 import com.example.dailyboramspring.domain.episode.facade.EpisodeFacade;
+import com.example.dailyboramspring.domain.episode.presentation.dto.response.ContentList;
 import com.example.dailyboramspring.domain.episode.presentation.dto.response.GetEpisodeResponse;
 import com.example.dailyboramspring.domain.episodelike.facade.EpisodeLikeFacade;
 import com.example.dailyboramspring.domain.user.domain.User;
@@ -26,9 +27,9 @@ public class GetEpisodeService {
         Episode episode = episodeFacade.getEpisodeById(episodeId);
         User user = userFacade.getCurrentUser();
 
-        List<GetEpisodeResponse.ContentList> contentLists = contentFacade.getContentsByEpisode(episode)
+        List<ContentList> contentLists = contentFacade.getContentsByEpisode(episode)
                 .stream()
-                .map(content -> GetEpisodeResponse.ContentList.builder()
+                .map(content -> ContentList.builder()
                         .id(content.getId())
                         .image(content.getCharacter().getImage())
                         .name(content.getCharacter().getName())

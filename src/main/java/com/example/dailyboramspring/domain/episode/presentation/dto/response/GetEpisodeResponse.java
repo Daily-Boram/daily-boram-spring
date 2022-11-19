@@ -14,14 +14,4 @@ public class GetEpisodeResponse {
     private Long episodeNumber;
     private boolean isLike;
     private List<ContentList> contentList;
-
-    @Getter
-    @AllArgsConstructor
-    @Builder
-    public static final class ContentList {
-        private Long id;
-        private String image;
-        private String name;
-        private String line;
-    }
 }
