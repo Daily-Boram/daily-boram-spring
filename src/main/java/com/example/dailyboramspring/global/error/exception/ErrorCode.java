@@ -19,6 +19,8 @@ public enum ErrorCode {
     USER_NAME_ALREADY_EXISTS(409, "USER-409-1", "User Name Already Exists"),
     INVALID_USER(401, "USER-401-1", "Invalid User"),
 
+    FORBIDDEN_USER(403, "USER-403-1", "Forbidden User"),
+
     FEED_NOT_FOUND(404, "POST-404-1", "Feed Not Found"),
     ALREADY_REPORTED_POST(409, "POST-409-1", "Already Reported Post"),
     ALREADY_SOLD(409, "POST-409-2", "Already Sold"),
