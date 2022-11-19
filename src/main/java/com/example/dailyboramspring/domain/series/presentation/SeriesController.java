@@ -4,9 +4,8 @@ import com.example.dailyboramspring.domain.series.domain.repository.SeriesReposi
 import com.example.dailyboramspring.domain.series.presentation.dto.requset.CreateSeriesRequest;
 import com.example.dailyboramspring.domain.series.service.CreateSeries;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -15,6 +14,8 @@ public class SeriesController {
 
     private final CreateSeries createSeries;
 
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public void postSeries(@RequestBody CreateSeriesRequest request) {
         createSeries.execute(request);
     }
