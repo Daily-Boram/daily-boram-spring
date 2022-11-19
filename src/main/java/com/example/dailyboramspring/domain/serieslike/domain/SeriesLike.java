@@ -18,7 +18,7 @@ public class SeriesLike {
 
     @EmbeddedId
     private SeriesLikeId id;
-    
+
     @MapsId("userId")
     @JoinColumn(name = "user_id", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
