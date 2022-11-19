@@ -33,7 +33,7 @@ public class User {
     private String phoneNumber;
 
     @NotNull
-    @Column(columnDefinition = "VARCHAR(30)")
+    @Column(columnDefinition = "VARCHAR(30)", unique = true)
     private String nickname;
 
     @Column(columnDefinition = "VARCHAR(100)")
