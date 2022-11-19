@@ -1,4 +1,4 @@
-package com.example.dailyboramspring.domain.profile.presentation.dto.response;
+package com.example.dailyboramspring.domain.user.presentation.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Getter
-public class MyUserProfileResponse {
+public class UserProfileResponse {
 
     private String nickname;
 
@@ -17,5 +17,4 @@ public class MyUserProfileResponse {
 
     private List<SeriesElement> noticeList;
 
-    private List<PurchaseElement> purchaseList;
 }

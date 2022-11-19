@@ -1,10 +1,7 @@
 package com.example.dailyboramspring.domain.user.service;
 
-import com.example.dailyboramspring.domain.profile.domain.Profile;
-import com.example.dailyboramspring.domain.profile.domain.repository.ProfileRepository;
 import com.example.dailyboramspring.domain.user.domain.User;
 import com.example.dailyboramspring.domain.user.domain.repository.UserRepository;
-import com.example.dailyboramspring.domain.user.facade.UserFacade;
 import com.example.dailyboramspring.domain.user.presentation.dto.response.TokenResponse;
 import com.example.dailyboramspring.global.properties.NaverProperties;
 import com.example.dailyboramspring.global.security.jwt.JwtTokenProvider;
@@ -24,8 +21,6 @@ public class NaverAuthService {
     private final NaverProperties naverProperties;
     private final JwtTokenProvider jwtTokenProvider;
     private final UserRepository userRepository;
-    private final ProfileRepository profileRepository;
-    private final UserFacade userFacade;
 
     public TokenResponse get(String code) {
 
@@ -45,15 +40,7 @@ public class NaverAuthService {
                             .gender(response.getGender())
                             .age(response.getAge())
                             .phoneNumber(response.getMobile())
-                            .build()
-            );
-
-            profileRepository.save(
-                    Profile.builder()
-                            .Id(userFacade.getUserByEmail(response.getEmail()).getId())
                             .nickname(RandomStringUtils.randomAlphanumeric(8))
-
-                            // 임시 Image link
                             .image("naver.com")
                             .cookie(0)
                             .build()

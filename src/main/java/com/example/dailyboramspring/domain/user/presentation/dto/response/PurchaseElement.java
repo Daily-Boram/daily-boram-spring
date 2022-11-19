@@ -1,4 +1,4 @@
-package com.example.dailyboramspring.domain.profile.presentation.dto.response;
+package com.example.dailyboramspring.domain.user.presentation.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;

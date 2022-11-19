@@ -1,4 +1,4 @@
-package com.example.dailyboramspring.domain.profile.presentation.dto.request;
+package com.example.dailyboramspring.domain.user.presentation.dto.request;
 
 
 import lombok.AllArgsConstructor;

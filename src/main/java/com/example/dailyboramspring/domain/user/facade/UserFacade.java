@@ -26,4 +26,8 @@ public class UserFacade {
     public User getUserById(Long id) {
         return userRepository.findById(id).orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
+
+    public Boolean existByNickname(String nickname) {
+        return userRepository.existsByNickname(nickname);
+    }
 }
