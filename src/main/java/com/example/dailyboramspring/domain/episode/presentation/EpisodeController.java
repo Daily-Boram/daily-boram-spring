@@ -19,11 +19,11 @@ public class EpisodeController {
     @PostMapping("/{series-id}")
     @ResponseStatus(HttpStatus.CREATED)
     public void createEpisode(@PathVariable("series-id") Long seriesId, @RequestBody CreateEpisodeRequest request) {
-        createEpisodeService.createEpisode(seriesId, request);
+        createEpisodeService.execute(seriesId, request);
     }
 
     @GetMapping("/{episode-id}")
     public GetEpisodeResponse getEpisode(@PathVariable("episode-id") Long episodeId) {
-        return getEpisodeService.getEpisode(episodeId);
+        return getEpisodeService.execute(episodeId);
     }
 }
