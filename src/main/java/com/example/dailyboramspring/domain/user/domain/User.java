@@ -31,4 +31,25 @@ public class User {
     @NotNull
     @Column(columnDefinition = "CHAR(13)")
     private String phoneNumber;
+
+    @NotNull
+    @Column(columnDefinition = "VARCHAR(30)")
+    private String nickname;
+
+    @Column(columnDefinition = "VARCHAR(100)")
+    private String introduce;
+
+    @NotNull
+    @Column(columnDefinition = "VARCHAR(500)")
+    private String image;
+
+    @NotNull
+    @Column(columnDefinition = "INT")
+    private Integer cookie;
+
+    public void changeProfile(String nickname, String image, String introduce) {
+        this.nickname = nickname;
+        this.image = image;
+        this.introduce = introduce;
+    }
 }
