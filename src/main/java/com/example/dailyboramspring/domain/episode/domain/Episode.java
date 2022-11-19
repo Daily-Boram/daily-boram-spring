@@ -1,6 +1,7 @@
 package com.example.dailyboramspring.domain.episode.domain;
 
 import com.example.dailyboramspring.domain.series.domain.Series;
+import com.example.dailyboramspring.global.entity.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Table(name = "tbl_episode")
 @Entity
-public class Episode {
+public class Episode extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
