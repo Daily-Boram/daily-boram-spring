@@ -1,6 +1,5 @@
 package com.example.dailyboramspring.domain.series.presentation;
 
-import com.example.dailyboramspring.domain.series.domain.repository.SeriesRepository;
 import com.example.dailyboramspring.domain.series.presentation.dto.requset.CreateSeriesRequest;
 import com.example.dailyboramspring.domain.series.service.CreateSeries;
 import lombok.RequiredArgsConstructor;
