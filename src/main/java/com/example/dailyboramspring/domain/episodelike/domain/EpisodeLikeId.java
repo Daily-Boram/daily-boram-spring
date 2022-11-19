@@ -1,9 +1,6 @@
 package com.example.dailyboramspring.domain.episodelike.domain;
 
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -11,6 +8,7 @@ import java.io.Serializable;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @EqualsAndHashCode
 @Embeddable
 public class EpisodeLikeId implements Serializable {
