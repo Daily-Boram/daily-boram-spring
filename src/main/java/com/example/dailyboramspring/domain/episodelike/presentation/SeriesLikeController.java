@@ -1,6 +1,6 @@
-package com.example.dailyboramspring.domain.serieslike.presentation;
+package com.example.dailyboramspring.domain.episodelike.presentation;
 
-import com.example.dailyboramspring.domain.serieslike.service.PostEpisodeLikeService;
+import com.example.dailyboramspring.domain.episodelike.service.PostEpisodeLikeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

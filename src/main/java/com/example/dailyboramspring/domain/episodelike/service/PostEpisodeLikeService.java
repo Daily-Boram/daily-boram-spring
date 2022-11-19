@@ -1,12 +1,9 @@
-package com.example.dailyboramspring.domain.serieslike.service;
+package com.example.dailyboramspring.domain.episodelike.service;
 
-import com.example.dailyboramspring.domain.episode.domain.Episode;
-import com.example.dailyboramspring.domain.episode.domain.repository.EpisodeRepository;
 import com.example.dailyboramspring.domain.episode.facade.EpisodeFacade;
 import com.example.dailyboramspring.domain.episodelike.domain.EpisodeLike;
 import com.example.dailyboramspring.domain.episodelike.domain.EpisodeLikeId;
 import com.example.dailyboramspring.domain.episodelike.domain.repository.EpisodeLikeRepository;
-import com.example.dailyboramspring.domain.serieslike.facade.SeriesLikeFacade;
 import com.example.dailyboramspring.domain.user.domain.User;
 import com.example.dailyboramspring.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
