@@ -17,7 +17,7 @@ public class CreateSeriesRequest {
     private String summary;
 
     @NotBlank(message = "이미지를 넣어주세요")
-    private String url;
+    private String image;
 
     private List<String> genre;
 }

@@ -23,20 +23,22 @@ public class CreateSeries {
     public void execute(CreateSeriesRequest createSeriesRequest) {
         User user = userFacade.getCurrentUser();
 
-        Series series = Series.builder()
-                .title(createSeriesRequest.getTitle())
-                .summary(createSeriesRequest.getSummary())
-                .image(createSeriesRequest.getUrl())
-                .user(user)
-                .build();
-        seriesRepository.save(series);
+        Series series = seriesRepository.save(
+                Series.builder()
+                        .title(createSeriesRequest.getTitle())
+                        .summary(createSeriesRequest.getSummary())
+                        .image(createSeriesRequest.getImage())
+                        .user(user)
+                        .build()
+        );
 
         for (String i : createSeriesRequest.getGenre()) {
-            Genre genre = Genre.builder()
-                    .series(series)
-                    .genre(i)
-                    .build();
-            genreRepository.save(genre);
+            genreRepository.save(
+                    Genre.builder()
+                            .series(series)
+                            .genre(i)
+                            .build()
+            );
         }
     }
 }
