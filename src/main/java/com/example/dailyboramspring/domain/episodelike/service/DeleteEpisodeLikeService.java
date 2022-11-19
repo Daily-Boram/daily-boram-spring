@@ -20,7 +20,7 @@ public class DeleteEpisodeLikeService {
     private final UserFacade userFacade;
 
     @Transactional
-    public void execute(long episodeId) {
+    public void execute(Long episodeId) {
 
         User user = userFacade.getCurrentUser();
 
