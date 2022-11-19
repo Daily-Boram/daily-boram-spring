@@ -48,6 +48,8 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.DELETE, "/like/episode/{episode_id}").permitAll()
                 .antMatchers(HttpMethod.POST, "/like/series/{series-id}").permitAll()
 
+                .antMatchers(HttpMethod.POST, "/character/{series-id}").permitAll()
+
                 .anyRequest().authenticated()
                 .and()
                 .apply(new FilterConfig(objectMapper, jwtTokenProvider));
