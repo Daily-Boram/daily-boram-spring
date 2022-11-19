@@ -11,6 +11,7 @@ import com.example.dailyboramspring.infrastructure.feign.dto.NaverUserResponse;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @Service
@@ -22,7 +23,8 @@ public class NaverAuthService {
     private final JwtTokenProvider jwtTokenProvider;
     private final UserRepository userRepository;
 
-    public TokenResponse get(String code) {
+    @Transactional
+    public TokenResponse execute(String code) {
 
         String token = "Bearer " + naverAuthClient.naverAuth(
                 naverProperties.getAuthorizationGrantType(),

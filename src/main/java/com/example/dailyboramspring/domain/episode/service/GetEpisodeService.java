@@ -10,6 +10,7 @@ import com.example.dailyboramspring.domain.user.domain.User;
 import com.example.dailyboramspring.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,7 +24,8 @@ public class GetEpisodeService {
     private final UserFacade userFacade;
     private final ContentFacade contentFacade;
 
-    public GetEpisodeResponse getEpisode(Long episodeId) {
+    @Transactional(readOnly = true)
+    public GetEpisodeResponse execute(Long episodeId) {
         Episode episode = episodeFacade.getEpisodeById(episodeId);
         User user = userFacade.getCurrentUser();
 

@@ -1,13 +1,14 @@
 package com.example.dailyboramspring.domain.user.service;
 
-import com.example.dailyboramspring.domain.user.presentation.dto.response.SeriesElement;
-import com.example.dailyboramspring.domain.user.presentation.dto.response.UserProfileResponse;
 import com.example.dailyboramspring.domain.series.facade.SeriesFacade;
 import com.example.dailyboramspring.domain.serieslike.facade.SeriesLikeFacade;
 import com.example.dailyboramspring.domain.user.domain.User;
 import com.example.dailyboramspring.domain.user.facade.UserFacade;
+import com.example.dailyboramspring.domain.user.presentation.dto.response.SeriesElement;
+import com.example.dailyboramspring.domain.user.presentation.dto.response.UserProfileResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,7 +21,7 @@ public class GetUserProfileService {
     private final SeriesFacade seriesFacade;
     private final SeriesLikeFacade seriesLikeFacade;
 
-
+    @Transactional(readOnly = true)
     public UserProfileResponse execute(Long id) {
 
         User user = userFacade.getUserById(id);

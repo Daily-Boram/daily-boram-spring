@@ -7,6 +7,7 @@ import com.example.dailyboramspring.domain.series.domain.Series;
 import com.example.dailyboramspring.domain.series.facade.SeriesFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @Service
@@ -15,7 +16,8 @@ public class CreateEpisodeService {
     private final EpisodeRepository episodeRepository;
     private final SeriesFacade seriesFacade;
 
-    public void createEpisode(Long seriesId, CreateEpisodeRequest request) {
+    @Transactional
+    public void execute(Long seriesId, CreateEpisodeRequest request) {
         Series series = seriesFacade.findById(seriesId);
 
         episodeRepository.save(

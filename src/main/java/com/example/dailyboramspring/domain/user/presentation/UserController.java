@@ -2,12 +2,12 @@ package com.example.dailyboramspring.domain.user.presentation;
 
 import com.example.dailyboramspring.domain.user.presentation.dto.request.UpdateProfileRequest;
 import com.example.dailyboramspring.domain.user.presentation.dto.response.MyUserProfileResponse;
-import com.example.dailyboramspring.domain.user.presentation.dto.response.UserProfileResponse;
-import com.example.dailyboramspring.domain.user.service.GetUserProfileService;
-import com.example.dailyboramspring.domain.user.service.UpdateProfileService;
 import com.example.dailyboramspring.domain.user.presentation.dto.response.TokenResponse;
+import com.example.dailyboramspring.domain.user.presentation.dto.response.UserProfileResponse;
 import com.example.dailyboramspring.domain.user.service.GetMyUserProfileService;
+import com.example.dailyboramspring.domain.user.service.GetUserProfileService;
 import com.example.dailyboramspring.domain.user.service.NaverAuthService;
+import com.example.dailyboramspring.domain.user.service.UpdateProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +26,7 @@ public class UserController {
 
     @GetMapping("/login/oauth2/code/naver")
     public TokenResponse get(String code) {
-        return naverAuthService.get(code);
+        return naverAuthService.execute(code);
     }
 
     @ResponseStatus(HttpStatus.OK)

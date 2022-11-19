@@ -1,9 +1,9 @@
 package com.example.dailyboramspring.domain.user.service;
 
-import com.example.dailyboramspring.domain.user.exception.NicknameOverlapException;
-import com.example.dailyboramspring.domain.user.presentation.dto.request.UpdateProfileRequest;
 import com.example.dailyboramspring.domain.user.domain.User;
+import com.example.dailyboramspring.domain.user.exception.NicknameOverlapException;
 import com.example.dailyboramspring.domain.user.facade.UserFacade;
+import com.example.dailyboramspring.domain.user.presentation.dto.request.UpdateProfileRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
