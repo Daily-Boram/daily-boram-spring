@@ -1,6 +1,5 @@
 package com.example.dailyboramspring.domain.profile.service;
 
-import com.example.dailyboramspring.domain.profile.domain.Profile;
 import com.example.dailyboramspring.domain.profile.exception.NicknameOverlapException;
 import com.example.dailyboramspring.domain.profile.facade.ProfileFacade;
 import com.example.dailyboramspring.domain.profile.presentation.dto.request.UpdateProfileRequest;
