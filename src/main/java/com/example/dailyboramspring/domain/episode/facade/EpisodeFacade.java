@@ -24,4 +24,8 @@ public class EpisodeFacade {
         return episodeRepository.findAllBySeries(series);
 
     }
+
+    public Boolean existEpisodeById(Long id) {
+        return episodeRepository.existsEpisodeById(id);
+    }
 }
