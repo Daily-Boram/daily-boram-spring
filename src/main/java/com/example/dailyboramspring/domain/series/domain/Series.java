@@ -1,7 +1,11 @@
 package com.example.dailyboramspring.domain.series.domain;
 
 import com.example.dailyboramspring.domain.user.domain.User;
-import lombok.*;
+import com.example.dailyboramspring.global.entity.BaseTimeEntity;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -10,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "tbl_series")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class Series {
+public class Series extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
