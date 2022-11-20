@@ -19,7 +19,6 @@ import javax.validation.Valid;
 public class UserController {
 
     private final NaverAuthService naverAuthService;
-
     private final GetUserProfileService getUserProfileService;
     private final GetMyUserProfileService getMyUserProfileService;
     private final UpdateProfileService updateProfileService;
