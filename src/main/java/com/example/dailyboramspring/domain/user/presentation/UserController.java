@@ -30,8 +30,8 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/profile/other/{user_id}")
-    public UserProfileResponse getUserProfile(@PathVariable(name = "user_id") Long id) {
+    @GetMapping("/profile/other/{user-id}")
+    public UserProfileResponse getUserProfile(@PathVariable(name = "user-id") Long id) {
         return getUserProfileService.execute(id);
     }
 
