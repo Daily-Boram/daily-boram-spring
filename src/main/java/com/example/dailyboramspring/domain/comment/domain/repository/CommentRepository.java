@@ -10,7 +10,10 @@ import java.util.Optional;
 
 public interface CommentRepository extends CrudRepository<Comment, Long> {
     Comment findCommentByEpisodeAndUser(Episode episode, User user);
+
     Boolean existsCommentByEpisodeAndUser(Episode episode, User user);
+
     Optional<Comment> findCommentById(Long id);
+
     List<Comment> findAllByEpisode(Episode episode);
 }
