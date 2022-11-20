@@ -5,7 +5,13 @@ import com.example.dailyboramspring.domain.episode.domain.Episode;
 import com.example.dailyboramspring.domain.user.domain.User;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+import java.util.Optional;
+
 public interface CommentRepository extends CrudRepository<Comment, Long> {
     Comment findCommentByEpisodeAndUser(Episode episode, User user);
+
     Boolean existsCommentByEpisodeAndUser(Episode episode, User user);
+
+    List<Comment> findAllByEpisode(Episode episode);
 }
