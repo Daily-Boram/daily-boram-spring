@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class ContentList {
+public class ContentListElement {
     private Long id;
     private String image;
     private String name;

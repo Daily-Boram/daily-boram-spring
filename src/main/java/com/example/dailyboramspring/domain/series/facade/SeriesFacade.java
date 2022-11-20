@@ -2,11 +2,10 @@ package com.example.dailyboramspring.domain.series.facade;
 
 import com.example.dailyboramspring.domain.series.domain.Series;
 import com.example.dailyboramspring.domain.series.domain.repository.SeriesRepository;
-
 import com.example.dailyboramspring.domain.series.exception.SeriesNotFoundException;
+import com.example.dailyboramspring.domain.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import com.example.dailyboramspring.domain.user.domain.User;
 
 import java.util.List;
 
@@ -23,5 +22,9 @@ public class SeriesFacade {
 
     public List<Series> GetAllSeriesByUser(User user) {
         return seriesRepository.findAllByUser(user);
+    }
+
+    public List<Series> getAllSeriesByTitle(String title) {
+        return seriesRepository.findAllByTitleContaining(title);
     }
 }

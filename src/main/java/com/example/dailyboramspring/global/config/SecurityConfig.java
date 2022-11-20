@@ -36,6 +36,8 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.POST, "/series").authenticated()
                 .antMatchers(HttpMethod.GET, "/series/{series-id").authenticated()
 
+                .antMatchers(HttpMethod.GET, "/search").permitAll()
+
                 .antMatchers(HttpMethod.POST, "/episode/{series-id}").permitAll()
                 .antMatchers(HttpMethod.POST, "/episode/{episode-id}").authenticated()
 

@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public interface SeriesLikeRepository extends CrudRepository<SeriesLike, SeriesLikeId> {
 
-    public Long countSeriesLikesBySeries(Series series);
+    Long countSeriesLikesBySeries(Series series);
 
     Optional<SeriesLike> findSeriesLikeByUserAndSeries(User user, Series series);
 

@@ -1,6 +1,5 @@
 package com.example.dailyboramspring.domain.episode.presentation.dto.response;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -13,5 +12,5 @@ public class GetEpisodeResponse {
     private String title;
     private Long episodeNumber;
     private boolean isLike;
-    private List<ContentList> contentList;
+    private List<ContentListElement> contentList;
 }
