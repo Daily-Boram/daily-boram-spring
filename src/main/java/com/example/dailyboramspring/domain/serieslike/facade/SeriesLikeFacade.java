@@ -18,9 +18,10 @@ public class SeriesLikeFacade {
         return seriesLikeRepository.countSeriesLikesBySeries(series);
     }
 
-    public Boolean existsSeriesLike(User user, Series series){
+    public Boolean existsSeriesLike(User user, Series series) {
         return seriesLikeRepository.existsSeriesLikeByUserAndSeries(user, series);
     }
+
     public SeriesLike getSeriesLike(User user, Series series) {
         return seriesLikeRepository.findSeriesLikeByUserAndSeries(user, series)
                 .orElseThrow(() -> SeriesLikeNotFoundException.EXCEPTION);

@@ -24,7 +24,7 @@ public class SeriesController {
 
     @GetMapping("/{series-id}")
     @ResponseStatus
-    public SeriesDetailResponse getSeriesDetail(@PathVariable("series-id") Long seriesId){
+    public SeriesDetailResponse getSeriesDetail(@PathVariable("series-id") Long seriesId) {
         return getSeriesDetailService.execute(seriesId);
     }
 }

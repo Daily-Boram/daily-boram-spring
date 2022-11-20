@@ -13,6 +13,6 @@ public interface SeriesRepository extends CrudRepository<Series, Long> {
     Optional<Series> findById(Long seriesId);
 
     List<Series> findAllByUser(User user);
-    
+
     List<Series> findAllByTitleContaining(String title);
 }
