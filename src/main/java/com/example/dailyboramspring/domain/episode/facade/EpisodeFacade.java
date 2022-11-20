@@ -30,7 +30,4 @@ public class EpisodeFacade {
 
     }
 
-    public Boolean existEpisodeById(Long id) {
-        return episodeRepository.existsEpisodeById(id);
-    }
 }
