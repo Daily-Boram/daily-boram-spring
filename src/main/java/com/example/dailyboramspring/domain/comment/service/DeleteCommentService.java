@@ -5,6 +5,7 @@ import com.example.dailyboramspring.domain.comment.exception.CommentNotFoundExce
 import com.example.dailyboramspring.domain.comment.facade.CommentFacade;
 import com.example.dailyboramspring.domain.episode.facade.EpisodeFacade;
 import com.example.dailyboramspring.domain.user.domain.User;
+import com.example.dailyboramspring.domain.user.exception.ForbiddenUserException;
 import com.example.dailyboramspring.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,14 +21,14 @@ public class DeleteCommentService {
     private final EpisodeFacade episodeFacade;
 
     @Transactional
-    public void execute(Long episodeId) {
+    public void execute(Long commentId) {
 
         User user = userFacade.getCurrentUser();
 
-        if (!commentFacade.existsCommentByEpisodeAndUser(episodeFacade.getEpisodeById(episodeId), user)) {
-            throw CommentNotFoundException.EXCEPTION;
+        if (!commentFacade.findCommentById(commentId).getUser().equals(user)) {
+            throw ForbiddenUserException.EXCEPTION;
         }
 
-        commentRepository.delete(commentFacade.findCommentByEpisodeAndUser(episodeFacade.getEpisodeById(episodeId), user));
+        commentRepository.delete(commentFacade.findCommentById(commentId));
     }
 }
