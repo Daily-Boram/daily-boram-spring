@@ -13,5 +13,7 @@ public interface CommentRepository extends CrudRepository<Comment, Long> {
 
     Boolean existsCommentByEpisodeAndUser(Episode episode, User user);
 
+    Optional<Comment> findCommentById(Long id);
+
     List<Comment> findAllByEpisode(Episode episode);
 }
