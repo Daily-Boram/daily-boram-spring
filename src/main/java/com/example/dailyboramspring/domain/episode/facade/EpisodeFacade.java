@@ -16,4 +16,8 @@ public class EpisodeFacade {
         return episodeRepository.findById(id)
                 .orElseThrow(() -> EpisodeNotFoundException.EXCEPTION);
     }
+
+    public Boolean existEpisodeById(Long id) {
+        return episodeRepository.existsEpisodeById(id);
+    }
 }
