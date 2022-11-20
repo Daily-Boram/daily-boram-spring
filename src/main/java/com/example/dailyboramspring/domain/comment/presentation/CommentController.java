@@ -10,6 +10,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/comment")
 public class CommentController {
 
     private final CreateCommentService createCommentService;
