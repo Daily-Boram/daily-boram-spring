@@ -30,7 +30,7 @@ public class SeriesFacade {
         return seriesRepository.findAllByTitleContaining(title);
     }
 
-    public List<Series> getAllSeriesByGenre(Genre genre){
+    public List<Series> getAllSeriesByGenre(Genre genre) {
         return seriesRepository.findAllByGenreContaining(genre);
     }
 

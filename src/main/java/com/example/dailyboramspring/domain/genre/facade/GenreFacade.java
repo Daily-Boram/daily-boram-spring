@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 public class GenreFacade {
 
     private final GenreRepository genreRepository;
+
     public List<String> findGenresBySeries(Series series) {
         return genreRepository.findAllBySeries(series)
                 .stream()
@@ -22,7 +23,7 @@ public class GenreFacade {
                 .collect(Collectors.toList());
     }
 
-    public Genre findByGenre(String keyword){
+    public Genre findByGenre(String keyword) {
         return genreRepository.findByGenre(keyword)
                 .orElseThrow(() -> GenreNotFoundException.EXCEPTION);
     }

@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface GenreRepository extends CrudRepository<Genre, Long> {
     List<Genre> findAllBySeries(Series series);
 
-   Optional<Genre> findByGenre(String genre);
+    Optional<Genre> findByGenre(String genre);
 }
