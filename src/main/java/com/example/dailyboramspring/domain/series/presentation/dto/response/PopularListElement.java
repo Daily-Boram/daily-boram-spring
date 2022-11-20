@@ -3,11 +3,9 @@ package com.example.dailyboramspring.domain.series.presentation.dto.response;
 import lombok.Builder;
 import lombok.Getter;
 
-import java.util.List;
-
 @Getter
 @Builder
-public class FeedListElement { // TODO: 2022/11/20 네이밍 수정하기  
+public class PopularListElement {
 
     private Long id;
 
@@ -17,7 +15,8 @@ public class FeedListElement { // TODO: 2022/11/20 네이밍 수정하기
 
     private String nickname;
 
+    private String summary;
+
     private Long like;
 
-    private List<String> genre;
 }

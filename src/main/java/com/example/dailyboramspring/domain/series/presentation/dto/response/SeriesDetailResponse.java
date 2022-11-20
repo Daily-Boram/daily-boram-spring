@@ -22,7 +22,7 @@ public class SeriesDetailResponse {
 
     private Boolean isLike;
 
-    private List<Genre> genre;
+    private List<String> genre;
 
     private List<EpisodeListElement> episodeLists;
 }
