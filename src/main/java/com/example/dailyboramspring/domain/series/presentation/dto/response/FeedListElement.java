@@ -17,7 +17,7 @@ public class FeedListElement {
 
     private String nickname;
 
-    private Integer like;
+    private Long like;
 
     private List<String> genre;
 }

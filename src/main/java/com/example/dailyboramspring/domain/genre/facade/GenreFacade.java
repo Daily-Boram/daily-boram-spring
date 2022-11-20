@@ -16,7 +16,7 @@ public class GenreFacade {
     private final GenreRepository genreRepository;
 
     public List<String> findGenresBySeries(Series series) {
-        return genreRepository.findGenresBySeries(series)
+        return genreRepository.findAllBySeries(series)
                 .stream()
                 .map(Genre::getGenre)
                 .collect(Collectors.toList());

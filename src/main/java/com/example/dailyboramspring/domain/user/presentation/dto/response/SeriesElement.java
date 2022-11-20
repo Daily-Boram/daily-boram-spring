@@ -13,5 +13,5 @@ public class SeriesElement {
 
     private String image;
 
-    private Integer like;
+    private Long like;
 }
