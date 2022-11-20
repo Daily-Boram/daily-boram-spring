@@ -10,7 +10,7 @@ public interface EpisodeRepository extends CrudRepository<Episode, Long> {
 
 
     List<Episode> findAllBySeries(Series series);
-    
+
     Boolean existsEpisodeById(Long id);
 
 }
