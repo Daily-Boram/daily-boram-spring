@@ -14,4 +14,6 @@ public interface SeriesLikeRepository extends CrudRepository<SeriesLike, SeriesL
     public Long countSeriesLikesBySeries(Series series);
 
     Optional<SeriesLike> findSeriesLikeByUserAndSeries(User user, Series series);
+
+    boolean existsSeriesLikeByUserAndSeries(User user, Series series);
 }
