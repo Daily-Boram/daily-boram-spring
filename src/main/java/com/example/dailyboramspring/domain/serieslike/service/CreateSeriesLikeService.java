@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class PostSeriesLikeService {
+public class CreateSeriesLikeService {
 
     private final UserFacade userFacade;
     private final SeriesLikeRepository seriesLikeRepository;

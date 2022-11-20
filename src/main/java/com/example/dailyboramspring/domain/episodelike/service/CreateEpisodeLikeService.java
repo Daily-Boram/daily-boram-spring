@@ -13,7 +13,7 @@ import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class PostEpisodeLikeService {
+public class CreateEpisodeLikeService {
 
     private final EpisodeLikeRepository episodeLikeRepository;
     private final EpisodeFacade episodeFacade;
