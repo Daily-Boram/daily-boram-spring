@@ -21,13 +21,13 @@ public class EpisodeFacade {
     }
 
 
-    public List<Episode> getEpisodeBySeries(Series series){
+    public List<Episode> getEpisodeBySeries(Series series) {
         return episodeRepository.findAllBySeries(series);
 
+    }
 
     public Boolean existEpisodeById(Long id) {
         return episodeRepository.existsEpisodeById(id);
 
     }
-
 }
