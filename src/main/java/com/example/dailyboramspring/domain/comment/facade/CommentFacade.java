@@ -7,6 +7,8 @@ import com.example.dailyboramspring.domain.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Component
 public class CommentFacade {
@@ -19,5 +21,9 @@ public class CommentFacade {
 
     public Boolean existsCommentByEpisodeAndUser(Episode episode, User user) {
         return commentRepository.existsCommentByEpisodeAndUser(episode, user);
+    }
+
+    public List<Comment> findAllByEpisode(Episode episode) {
+        return commentRepository.findAllByEpisode(episode);
     }
 }
