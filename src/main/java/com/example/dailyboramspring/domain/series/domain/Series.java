@@ -1,5 +1,7 @@
 package com.example.dailyboramspring.domain.series.domain;
 
+import com.example.dailyboramspring.domain.genre.domain.Genre;
+import com.example.dailyboramspring.domain.serieslike.domain.SeriesLike;
 import com.example.dailyboramspring.domain.user.domain.User;
 import com.example.dailyboramspring.global.entity.BaseTimeEntity;
 import lombok.AccessLevel;
@@ -9,6 +11,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Table(name = "tbl_series")
@@ -36,6 +40,11 @@ public class Series extends BaseTimeEntity {
     @Column(columnDefinition = "VARCHAR(500)")
     private String image;
 
+    @OneToMany(mappedBy = "series", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<Genre> genre = new ArrayList<>();
+
+    @OneToMany(mappedBy = "series", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<SeriesLike> seriesLike = new ArrayList<>();
     @Builder
     public Series(User user, String title, String summary, String image) {
         this.user = user;

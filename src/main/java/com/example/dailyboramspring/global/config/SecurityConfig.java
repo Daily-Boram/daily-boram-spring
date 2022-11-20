@@ -33,6 +33,8 @@ public class SecurityConfig {
 
                 .antMatchers(HttpMethod.GET, "/login/oauth2/code/naver").permitAll()
 
+                .antMatchers(HttpMethod.GET, "/main").permitAll()
+
                 .antMatchers(HttpMethod.POST, "/series").authenticated()
                 .antMatchers(HttpMethod.GET, "/series/{series-id").authenticated()
 

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Builder
-public class FeedListElement { // TODO: 2022/11/20 네이밍 수정하기  
+public class SeriesListElement {
 
     private Long id;
 
