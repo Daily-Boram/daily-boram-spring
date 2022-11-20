@@ -56,6 +56,7 @@ public class SecurityConfig {
 
                 .antMatchers(HttpMethod.POST, "/comment/{episode-id}").permitAll()
                 .antMatchers(HttpMethod.DELETE, "/comment/{episode-id}").permitAll()
+                .antMatchers(HttpMethod.GET, "/comment/{episode-id}").permitAll()
 
                 .anyRequest().authenticated()
                 .and()
