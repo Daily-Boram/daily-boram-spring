@@ -28,8 +28,8 @@ public class CommentController {
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{comment-id}")
-    public void deleteComment(@PathVariable(name = "comment-id") Long episodeId) {
-        deleteCommentService.execute(episodeId);
+    public void deleteComment(@PathVariable(name = "comment-id") Long commentId) {
+        deleteCommentService.execute(commentId);
     }
 
     @ResponseStatus(HttpStatus.OK)
