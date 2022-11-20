@@ -10,6 +10,8 @@ import com.example.dailyboramspring.infrastructure.feign.client.NaverGetClient;
 import com.example.dailyboramspring.infrastructure.feign.dto.NaverUserResponse;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,7 +26,8 @@ public class NaverAuthService {
     private final UserRepository userRepository;
 
     @Transactional
-    public TokenResponse execute(String code) {
+    public ResponseEntity<TokenResponse> execute(String code) {
+        int status = HttpStatus.OK.value();
 
         String token = "Bearer " + naverAuthClient.naverAuth(
                 naverProperties.getAuthorizationGrantType(),
@@ -47,11 +50,14 @@ public class NaverAuthService {
                             .cookie(0)
                             .build()
             );
+            status = HttpStatus.CREATED.value();
         }
         String accessToken = jwtTokenProvider.generateAccessToken(response.getEmail());
 
-        return TokenResponse.builder()
-                .accessToken(accessToken)
-                .build();
+        return new ResponseEntity<>(
+                TokenResponse.builder()
+                        .accessToken(accessToken)
+                        .build(), HttpStatus.valueOf(status)
+        );
     }
 }
