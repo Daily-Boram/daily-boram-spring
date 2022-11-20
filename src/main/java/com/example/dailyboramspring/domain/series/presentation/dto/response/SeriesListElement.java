@@ -1,5 +1,5 @@
 package com.example.dailyboramspring.domain.series.presentation.dto.response;
-`
+
 import lombok.Builder;
 import lombok.Getter;
 
