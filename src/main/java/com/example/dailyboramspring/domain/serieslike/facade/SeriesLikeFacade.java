@@ -14,7 +14,7 @@ public class SeriesLikeFacade {
 
     private final SeriesLikeRepository seriesLikeRepository;
 
-    public Long getCountBySeries(Series series) {
+    public Integer getCountBySeries(Series series) {
         return seriesLikeRepository.countSeriesLikesBySeries(series);
     }
 
