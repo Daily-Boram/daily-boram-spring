@@ -10,6 +10,7 @@ import com.example.dailyboramspring.domain.user.service.NaverAuthService;
 import com.example.dailyboramspring.domain.user.service.UpdateProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -19,13 +20,12 @@ import javax.validation.Valid;
 public class UserController {
 
     private final NaverAuthService naverAuthService;
-
     private final GetUserProfileService getUserProfileService;
     private final GetMyUserProfileService getMyUserProfileService;
     private final UpdateProfileService updateProfileService;
 
     @GetMapping("/login/oauth2/code/naver")
-    public TokenResponse get(String code) {
+    public ResponseEntity<TokenResponse> get(String code) {
         return naverAuthService.execute(code);
     }
 
