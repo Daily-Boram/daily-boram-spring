@@ -14,7 +14,7 @@ public class MainPageController {
 
     private final MainPageSeries mainPageSeries;
 
-    @GetMapping("/")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public MainPageResponse getMainPage(@RequestParam("genre") String genre) {
         return mainPageSeries.execute(genre);
