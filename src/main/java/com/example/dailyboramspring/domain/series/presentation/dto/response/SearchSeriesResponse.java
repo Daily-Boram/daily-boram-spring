@@ -8,5 +8,5 @@ import java.util.List;
 @Getter
 @Builder
 public class SearchSeriesResponse {
-    private List<FeedListElement> feedList;
+    private List<FeedListElement> seriesList;
 }

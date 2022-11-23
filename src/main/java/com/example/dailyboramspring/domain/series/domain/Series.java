@@ -39,9 +39,11 @@ public class Series extends BaseTimeEntity {
     @Column(columnDefinition = "VARCHAR(500)")
     private String image;
 
-    @OneToMany(mappedBy = "series", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-    private List<Genre> genre = new ArrayList<>();
-
-    @OneToMany(mappedBy = "series", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-    private List<SeriesLike> seriesLike = new ArrayList<>();
+    @Builder
+    public Series(User user, String title, String summary, String image) {
+        this.user = user;
+        this.title = title;
+        this.summary = summary;
+        this.image = image;
+    }
 }

@@ -41,6 +41,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
     implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+    implementation 'com.querydsl:querydsl-jpa'
+
+    annotationProcessor(
+            "javax.persistence:javax.persistence-api",
+            "javax.annotation:javax.annotation-api",
+            "com.querydsl:querydsl-apt:5.0.0:jpa")
 }
 
 test {

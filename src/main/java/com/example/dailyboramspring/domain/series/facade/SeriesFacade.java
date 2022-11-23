@@ -1,7 +1,6 @@
 package com.example.dailyboramspring.domain.series.facade;
 
 import com.example.dailyboramspring.domain.genre.domain.Genre;
-import com.example.dailyboramspring.domain.genre.domain.repository.GenreRepository;
 import com.example.dailyboramspring.domain.series.domain.Series;
 import com.example.dailyboramspring.domain.series.domain.repository.SeriesRepository;
 import com.example.dailyboramspring.domain.series.exception.SeriesNotFoundException;
@@ -29,9 +28,4 @@ public class SeriesFacade {
     public List<Series> getAllSeriesByTitle(String title) {
         return seriesRepository.findAllByTitleContaining(title);
     }
-
-    public List<Series> getAllSeriesByGenre(Genre genre) {
-        return seriesRepository.findAllByGenreContaining(genre);
-    }
-
 }

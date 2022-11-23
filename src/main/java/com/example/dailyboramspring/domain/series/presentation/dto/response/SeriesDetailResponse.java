@@ -1,6 +1,6 @@
 package com.example.dailyboramspring.domain.series.presentation.dto.response;
 
-import com.example.dailyboramspring.domain.genre.domain.Genre;
+import com.querydsl.core.annotations.QueryProjection;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -25,4 +25,16 @@ public class SeriesDetailResponse {
     private List<String> genre;
 
     private List<EpisodeListElement> episodeLists;
+
+    @QueryProjection
+    public SeriesDetailResponse(String title, String image, String summary, String nickname, Long like, Boolean isLike, List<String> genre, List<EpisodeListElement> episodeLists) {
+        this.title = title;
+        this.image = image;
+        this.summary = summary;
+        this.nickname = nickname;
+        this.like = like;
+        this.isLike = isLike;
+        this.genre = genre;
+        this.episodeLists = episodeLists;
+    }
 }

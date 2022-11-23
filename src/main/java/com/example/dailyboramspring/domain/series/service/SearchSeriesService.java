@@ -35,7 +35,7 @@ public class SearchSeriesService {
                 .collect(Collectors.toList());
 
         return SearchSeriesResponse.builder()
-                .feedList(feedList)
+                .seriesList(feedList)
                 .build();
     }
 }

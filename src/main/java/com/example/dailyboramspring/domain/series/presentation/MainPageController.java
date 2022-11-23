@@ -1,6 +1,5 @@
 package com.example.dailyboramspring.domain.series.presentation;
 
-
 import com.example.dailyboramspring.domain.series.presentation.dto.response.MainPageResponse;
 import com.example.dailyboramspring.domain.series.service.MainPageSeries;
 import lombok.RequiredArgsConstructor;
@@ -14,9 +13,12 @@ public class MainPageController {
 
     private final MainPageSeries mainPageSeries;
 
-    @GetMapping("/")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public MainPageResponse getMainPage(@RequestParam("genre") String genre) {
-        return mainPageSeries.execute(genre);
+    public MainPageResponse getMainPage(
+            @RequestParam(value = "genre") String genre,
+            @RequestParam(value = "sort", required = false, defaultValue = "random") String sort
+    ) {
+        return mainPageSeries.execute(genre, sort);
     }
 }

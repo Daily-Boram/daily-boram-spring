@@ -31,19 +31,19 @@ public class SecurityConfig {
         http
                 .authorizeRequests()
 
-                .antMatchers(HttpMethod.GET, "/login/oauth2/code/naver").permitAll()
+                .antMatchers(HttpMethod.GET, "/login/oauth2/code/naver").authenticated()
 
-                .antMatchers(HttpMethod.GET, "/main").permitAll()
+                .antMatchers(HttpMethod.GET, "/main").authenticated()
 
                 .antMatchers(HttpMethod.POST, "/series").authenticated()
                 .antMatchers(HttpMethod.GET, "/series/{series-id").authenticated()
 
-                .antMatchers(HttpMethod.GET, "/search").permitAll()
+                .antMatchers(HttpMethod.GET, "/search").authenticated()
 
-                .antMatchers(HttpMethod.POST, "/episode/{series-id}").permitAll()
+                .antMatchers(HttpMethod.POST, "/episode/{series-id}").authenticated()
                 .antMatchers(HttpMethod.POST, "/episode/{episode-id}").authenticated()
 
-                .antMatchers(HttpMethod.POST, "/content/{episode-id}/{character-id}").permitAll()
+                .antMatchers(HttpMethod.POST, "/content/{episode-id}/{character-id}").authenticated()
 
                 .antMatchers(HttpMethod.GET, "/profile/other/{user-id}").permitAll()
                 .antMatchers(HttpMethod.GET, "/profile/me").permitAll()
@@ -54,11 +54,11 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.POST, "/like/series/{series-id}").permitAll()
                 .antMatchers(HttpMethod.DELETE, "/like/series/{episode-id}").permitAll()
 
-                .antMatchers(HttpMethod.POST, "/character/{series-id}").permitAll()
+                .antMatchers(HttpMethod.POST, "/character/{series-id}").authenticated()
 
-                .antMatchers(HttpMethod.POST, "/comment/{episode-id}").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/comment/{episode-id}").permitAll()
-                .antMatchers(HttpMethod.GET, "/comment/{episode-id}").permitAll()
+                .antMatchers(HttpMethod.POST, "/comment/{episode-id}").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/comment/{episode-id}").authenticated()
+                .antMatchers(HttpMethod.GET, "/comment/{episode-id}").authenticated()
 
                 .anyRequest().authenticated()
                 .and()
