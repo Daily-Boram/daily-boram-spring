@@ -28,5 +28,4 @@ public class SeriesFacade {
     public List<Series> getAllSeriesByTitle(String title) {
         return seriesRepository.findAllByTitleContaining(title);
     }
-
 }

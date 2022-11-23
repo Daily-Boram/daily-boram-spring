@@ -4,10 +4,7 @@ import com.example.dailyboramspring.domain.genre.domain.Genre;
 import com.example.dailyboramspring.domain.serieslike.domain.SeriesLike;
 import com.example.dailyboramspring.domain.user.domain.User;
 import com.example.dailyboramspring.global.entity.BaseTimeEntity;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -15,8 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@Builder
 @Table(name = "tbl_series")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 public class Series extends BaseTimeEntity {
 

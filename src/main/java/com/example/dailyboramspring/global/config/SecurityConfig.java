@@ -45,14 +45,14 @@ public class SecurityConfig {
 
                 .antMatchers(HttpMethod.POST, "/content/{episode-id}/{character-id}").authenticated()
 
-                .antMatchers(HttpMethod.GET, "/profile/other/{user_id}").authenticated()
-                .antMatchers(HttpMethod.GET, "/profile/me").authenticated()
-                .antMatchers(HttpMethod.PATCH, "/profile").authenticated()
+                .antMatchers(HttpMethod.GET, "/profile/other/{user-id}").permitAll()
+                .antMatchers(HttpMethod.GET, "/profile/me").permitAll()
+                .antMatchers(HttpMethod.PATCH, "/profile").permitAll()
 
-                .antMatchers(HttpMethod.POST, "/like/episode/{episode_id}").authenticated()
-                .antMatchers(HttpMethod.DELETE, "/like/episode/{episode_id}").authenticated()
-                .antMatchers(HttpMethod.POST, "/like/series/{series-id}").authenticated()
-                .antMatchers(HttpMethod.DELETE, "/like/series/{episode_id}").authenticated()
+                .antMatchers(HttpMethod.POST, "/like/episode/{episode-id}").permitAll()
+                .antMatchers(HttpMethod.DELETE, "/like/episode/{episode-id}").permitAll()
+                .antMatchers(HttpMethod.POST, "/like/series/{series-id}").permitAll()
+                .antMatchers(HttpMethod.DELETE, "/like/series/{episode-id}").permitAll()
 
                 .antMatchers(HttpMethod.POST, "/character/{series-id}").authenticated()
 
