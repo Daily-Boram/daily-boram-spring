@@ -7,6 +7,7 @@ import com.example.dailyboramspring.domain.serieslike.domain.SeriesLikeId;
 import com.example.dailyboramspring.domain.user.domain.User;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface SeriesLikeRepository extends CrudRepository<SeriesLike, SeriesLikeId> {
@@ -16,4 +17,6 @@ public interface SeriesLikeRepository extends CrudRepository<SeriesLike, SeriesL
     Optional<SeriesLike> findSeriesLikeByUserAndSeries(User user, Series series);
 
     boolean existsSeriesLikeByUserAndSeries(User user, Series series);
+
+    List<SeriesLike> findAllBySeries(Series series);
 }
