@@ -15,7 +15,7 @@ public class SeriesController {
 
     private final CreateSeries createSeries;
     private final GetSeriesDetailService getSeriesDetailService;
-
+    
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void postSeries(@RequestBody CreateSeriesRequest request) {
