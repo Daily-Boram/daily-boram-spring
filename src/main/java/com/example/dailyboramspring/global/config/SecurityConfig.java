@@ -33,7 +33,7 @@ public class SecurityConfig {
 
                 .antMatchers(HttpMethod.GET, "/login/oauth2/code/naver").permitAll()
 
-                .antMatchers(HttpMethod.GET, "/main").authenticated()
+                .antMatchers(HttpMethod.GET, "/main").permitAll()
 
                 .antMatchers(HttpMethod.POST, "/series").authenticated()
                 .antMatchers(HttpMethod.GET, "/series/{series-id").authenticated()
@@ -46,13 +46,13 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.POST, "/content/{episode-id}/{character-id}").authenticated()
 
                 .antMatchers(HttpMethod.GET, "/profile/other/{user-id}").permitAll()
-                .antMatchers(HttpMethod.GET, "/profile/me").permitAll()
+                .antMatchers(HttpMethod.GET, "/profile/me").authenticated()
                 .antMatchers(HttpMethod.PATCH, "/profile").permitAll()
 
-                .antMatchers(HttpMethod.POST, "/like/episode/{episode-id}").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/like/episode/{episode-id}").permitAll()
-                .antMatchers(HttpMethod.POST, "/like/series/{series-id}").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/like/series/{episode-id}").permitAll()
+                .antMatchers(HttpMethod.POST, "/like/episode/{episode-id}").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/like/episode/{episode-id}").authenticated()
+                .antMatchers(HttpMethod.POST, "/like/series/{series-id}").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/like/series/{episode-id}").authenticated()
 
                 .antMatchers(HttpMethod.POST, "/character/{series-id}").authenticated()
 
