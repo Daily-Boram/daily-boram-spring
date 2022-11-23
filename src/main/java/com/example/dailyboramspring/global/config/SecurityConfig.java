@@ -31,7 +31,7 @@ public class SecurityConfig {
         http
                 .authorizeRequests()
 
-                .antMatchers(HttpMethod.GET, "/login/oauth2/code/naver").authenticated()
+                .antMatchers(HttpMethod.GET, "/login/oauth2/code/naver").permitAll()
 
                 .antMatchers(HttpMethod.GET, "/main").authenticated()
 
