@@ -1,6 +1,7 @@
 package com.example.dailyboramspring.domain.series.service;
 
 import com.example.dailyboramspring.domain.genre.facade.GenreFacade;
+import com.example.dailyboramspring.domain.series.domain.Series;
 import com.example.dailyboramspring.domain.series.domain.repository.SeriesRepository;
 import com.example.dailyboramspring.domain.series.presentation.dto.response.MainPageResponse;
 import com.example.dailyboramspring.domain.series.presentation.dto.response.PopularListElement;
@@ -10,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -21,22 +23,24 @@ public class MainPageSeries {
     private final GenreFacade genreFacade;
 
     @Transactional(readOnly = true)
-    public MainPageResponse execute(String keyword, String sort) {
+    public MainPageResponse execute(String genre, String sort) {
+
+        List<SeriesListElement> seriesListElements;
+
+        if (genre.isEmpty()) {
+            seriesListElements = seriesRepository.queryAll(sort)
+                    .stream()
+                    .map(this::SeriesList)
+                    .collect(Collectors.toList());
+        } else {
+            seriesListElements = seriesRepository.queryAll(genre, sort)
+                    .stream()
+                    .map(this::SeriesList)
+                    .collect(Collectors.toList());
+        }
 
         return MainPageResponse.builder()
-                .seriesList(seriesRepository.queryAll(keyword, sort)
-                        .stream()
-                        .map(series -> SeriesListElement.builder()
-                                .id(series.getId())
-                                .title(series.getTitle())
-                                .image(series.getImage())
-                                .genre(genreFacade.findGenresBySeries(series))
-                                .like(seriesLikeFacade.getCountBySeries(series))
-                                .nickname(series.getUser().getNickname())
-                                .build()
-                        )
-                        .collect(Collectors.toList())
-                )
+                .seriesList(seriesListElements)
                 .popularList(
                         seriesRepository.queryAll()
                                 .stream()
@@ -51,6 +55,17 @@ public class MainPageSeries {
                                 )
                                 .collect(Collectors.toList())
                 )
+                .build();
+    }
+    
+    private SeriesListElement SeriesList(Series series) {
+        return SeriesListElement.builder()
+                .id(series.getId())
+                .title(series.getTitle())
+                .image(series.getImage())
+                .genre(genreFacade.findGenresBySeries(series))
+                .like(seriesLikeFacade.getCountBySeries(series))
+                .nickname(series.getUser().getNickname())
                 .build();
     }
 }
