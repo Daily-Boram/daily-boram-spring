@@ -9,4 +9,6 @@ public interface SeriesCustom {
     List<Series> queryAll(String genre, String sort);
 
     List<Series> queryAll();
+
+    List<Series> queryAll(String sort);
 }
