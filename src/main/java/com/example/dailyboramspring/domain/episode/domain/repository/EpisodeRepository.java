@@ -12,7 +12,7 @@ public interface EpisodeRepository extends CrudRepository<Episode, Long> {
 
     List<Episode> findAllBySeries(Series series);
 
-    List<Episode> findAllBySeriesOrderByIdAsc(Series series, Pageable pageable);
+    List<Episode> findEpisodeBySeriesOrderByIdAsc(Series series, Pageable pageable);
 
     Boolean existsEpisodeById(Long id);
 
