@@ -5,11 +5,11 @@ import com.example.dailyboramspring.domain.series.presentation.dto.response.Seri
 import com.example.dailyboramspring.domain.series.service.CreateSeries;
 import com.example.dailyboramspring.domain.series.service.GetSeriesDetailService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Pageable;
 
 @RequiredArgsConstructor
 @RestController
