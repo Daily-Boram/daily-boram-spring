@@ -28,6 +28,6 @@ public class SeriesController {
     @GetMapping("/{series-id}")
     @ResponseStatus
     public SeriesDetailResponse getSeriesDetail(@PathVariable("series-id") Long seriesId, @PageableDefault(sort = "id") Pageable pageable) {
-        return getSeriesDetailService.execute(seriesId);
+        return getSeriesDetailService.execute(seriesId, pageable);
     }
 }
