@@ -5,8 +5,11 @@ import com.example.dailyboramspring.domain.series.presentation.dto.response.Seri
 import com.example.dailyboramspring.domain.series.service.CreateSeries;
 import com.example.dailyboramspring.domain.series.service.GetSeriesDetailService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.awt.print.Pageable;
 
 @RequiredArgsConstructor
 @RestController
@@ -24,7 +27,7 @@ public class SeriesController {
 
     @GetMapping("/{series-id}")
     @ResponseStatus
-    public SeriesDetailResponse getSeriesDetail(@PathVariable("series-id") Long seriesId) {
+    public SeriesDetailResponse getSeriesDetail(@PathVariable("series-id") Long seriesId, @PageableDefault(sort = "id") Pageable pageable) {
         return getSeriesDetailService.execute(seriesId);
     }
 }
