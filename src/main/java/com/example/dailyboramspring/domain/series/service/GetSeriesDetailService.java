@@ -35,7 +35,7 @@ public class GetSeriesDetailService {
         User user = userFacade.getCurrentUser();
         Series series = seriesFacade.findById(seriesId);
 
-        List<EpisodeListElement> episodeLists = episodeRepository.findEpisodesBySeriesOrderByIdAsc(series, pageable)
+        List<EpisodeListElement> episodeLists = episodeRepository.queryAllEpisodePaging(series, pageable)
                 .stream()
                 .map(episode -> EpisodeListElement.builder()
                         .id(episode.getId())
@@ -57,5 +57,4 @@ public class GetSeriesDetailService {
                 .episodeLists(episodeLists)
                 .build();
     }
-
 }
