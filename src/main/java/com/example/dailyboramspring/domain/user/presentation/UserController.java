@@ -25,7 +25,7 @@ public class UserController {
     private final UpdateProfileService updateProfileService;
 
     @GetMapping("/login/oauth2/code/naver")
-    public ResponseEntity<TokenResponse> get(String code) {
+    public ResponseEntity<TokenResponse> get(@RequestParam String code) {
         return naverAuthService.execute(code);
     }
 
