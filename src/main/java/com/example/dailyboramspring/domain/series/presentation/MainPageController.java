@@ -16,7 +16,7 @@ public class MainPageController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public MainPageResponse getMainPage(
-            @RequestParam(value = "genre") String genre,
+            @RequestParam(value = "genre", required = false, defaultValue = "") String genre,
             @RequestParam(value = "sort", required = false, defaultValue = "random") String sort
     ) {
         return mainPageSeries.execute(genre, sort);
