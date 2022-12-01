@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "tbl_character",
-        uniqueConstraints = @UniqueConstraint(columnNames = {"name","image","series_id"})
+        uniqueConstraints = @UniqueConstraint(columnNames = {"name","series_id"})
 )
 public class Character {
 
