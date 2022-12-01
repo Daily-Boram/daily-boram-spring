@@ -18,8 +18,8 @@ public class CharacterFacade {
                 .orElseThrow(() -> CharacterNotFoundException.EXCEPTION);
     }
 
-    public Character findCharacterByNameAndImageAndSeries(String name, Series series, String image) {
-        return characterRepository.findByNameAndSeriesAndImage(name, series, image)
+    public Character findCharacterByNameAndSeries(String name, Series series) {
+        return characterRepository.findByNameAndSeries(name, series)
                 .orElseThrow(() -> CharacterNotFoundException.EXCEPTION);
     }
 }
