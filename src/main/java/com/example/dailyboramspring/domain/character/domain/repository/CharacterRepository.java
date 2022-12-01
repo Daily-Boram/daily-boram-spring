@@ -1,10 +1,11 @@
 package com.example.dailyboramspring.domain.character.domain.repository;
 
 import com.example.dailyboramspring.domain.character.domain.Character;
+import com.example.dailyboramspring.domain.series.domain.Series;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
 public interface CharacterRepository extends CrudRepository<Character, Long> {
-    Optional<Character> findByNameAndImage(String name, String image);
+    Optional<Character> findByNameAndImageAndSeries(String name, String image, Series series);
 }

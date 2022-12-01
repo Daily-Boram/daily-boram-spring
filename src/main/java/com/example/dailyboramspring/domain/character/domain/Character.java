@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "tbl_character",
-        uniqueConstraints = @UniqueConstraint(columnNames = {"name", "image"})
+        uniqueConstraints = @UniqueConstraint(columnNames = {"name", "image", "series"})
 )
 public class Character {
 

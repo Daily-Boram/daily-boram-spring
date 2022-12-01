@@ -40,9 +40,9 @@ public class CreateEpisodeService {
 
 
         for(CreateEpisodeRequest.Character_list character_list : request.getCharacter()) {
-            //if (characterRepository.findByNameAndImage(character_list.getName(), character_list.getImage()).isPresent()) {
-            //    throw CharacterExistsException.EXCEPTION;
-            //}
+            if (characterRepository.findByNameAndImageAndSeries(character_list.getName(), character_list.getImage(), series).isPresent()) {
+                throw CharacterExistsException.EXCEPTION;
+            }
 
             characterRepository.save(
                     Character.builder()
@@ -54,7 +54,7 @@ public class CreateEpisodeService {
         }
 
         for(CreateEpisodeRequest.Content_list content_list : request.getContent()) {
-            Character character = characterFacade.findCharacterByNameAndImage(content_list.getName(), content_list.getImage());
+            Character character = characterFacade.findCharacterByNameAndImage(content_list.getName(), content_list.getImage(), series);
 
             contentRepository.save(
                     Content.builder()

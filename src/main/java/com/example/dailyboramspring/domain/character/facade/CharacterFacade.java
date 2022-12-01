@@ -3,6 +3,7 @@ package com.example.dailyboramspring.domain.character.facade;
 import com.example.dailyboramspring.domain.character.domain.Character;
 import com.example.dailyboramspring.domain.character.domain.repository.CharacterRepository;
 import com.example.dailyboramspring.domain.character.exception.CharacterNotFoundException;
+import com.example.dailyboramspring.domain.series.domain.Series;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -17,8 +18,8 @@ public class CharacterFacade {
                 .orElseThrow(() -> CharacterNotFoundException.EXCEPTION);
     }
 
-    public Character findCharacterByNameAndImage(String name, String image) {
-        return characterRepository.findByNameAndImage(name, image)
+    public Character findCharacterByNameAndImage(String name, String image, Series series) {
+        return characterRepository.findByNameAndImageAndSeries(name, image, series)
                 .orElseThrow(() -> CharacterNotFoundException.EXCEPTION);
     }
 }
