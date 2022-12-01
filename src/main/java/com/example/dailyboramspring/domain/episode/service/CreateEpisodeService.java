@@ -44,7 +44,7 @@ public class CreateEpisodeService {
         for(CreateEpisodeRequest.Character_list character_list : request.getCharacter()) {
             log.info(character_list.getImage());
             log.info(character_list.getName());
-            if (characterRepository.findByNameAndSeries(character_list.getName(), series).isEmpty()) {
+            if (characterRepository.findByNameAndSeriesAndImage(character_list.getName(), series, character_list.getImage()).isEmpty()) {
                 characterRepository.save(
                         Character.builder()
                                 .image(character_list.getImage())
@@ -56,7 +56,7 @@ public class CreateEpisodeService {
         }
 
         for(CreateEpisodeRequest.Content_list content_list : request.getContent()) {
-            Character character = characterFacade.findCharacterByNameAndImageAndSeries(content_list.getName(), series);
+            Character character = characterFacade.findCharacterByNameAndImageAndSeries(content_list.getName(), series, content_list.getImage());
 
             contentRepository.save(
                     Content.builder()
