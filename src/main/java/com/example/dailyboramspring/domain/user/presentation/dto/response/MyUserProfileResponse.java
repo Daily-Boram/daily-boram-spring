@@ -15,6 +15,8 @@ public class MyUserProfileResponse {
 
     private String introduce;
 
+    private Integer cookie;
+
     private List<SeriesElement> noticeList;
 
     private List<PurchaseElement> purchaseList;

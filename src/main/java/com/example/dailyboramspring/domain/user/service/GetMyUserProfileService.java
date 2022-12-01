@@ -53,6 +53,7 @@ public class GetMyUserProfileService {
                 user.getNickname(),
                 user.getImage(),
                 user.getIntroduce(),
+                user.getCookie(),
                 noticeList,
                 purchaseList
         );
