@@ -12,9 +12,11 @@ import com.example.dailyboramspring.domain.episode.presentation.dto.request.Crea
 import com.example.dailyboramspring.domain.series.domain.Series;
 import com.example.dailyboramspring.domain.series.facade.SeriesFacade;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class CreateEpisodeService {
@@ -40,6 +42,8 @@ public class CreateEpisodeService {
 
 
         for(CreateEpisodeRequest.Character_list character_list : request.getCharacter()) {
+            log.info(character_list.getImage());
+            log.info(character_list.getName());
             if (characterRepository.findByNameAndImageAndSeries(character_list.getName(), character_list.getImage(), series).isEmpty()) {
                 characterRepository.save(
                         Character.builder()
