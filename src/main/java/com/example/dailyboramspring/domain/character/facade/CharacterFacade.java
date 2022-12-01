@@ -16,4 +16,9 @@ public class CharacterFacade {
         return characterRepository.findById(characterId)
                 .orElseThrow(() -> CharacterNotFoundException.EXCEPTION);
     }
+
+    public Character findCharacterByNameAndImage(String name, String image) {
+        return characterRepository.findByNameAndImage(name, image)
+                .orElseThrow(() -> CharacterNotFoundException.EXCEPTION);
+    }
 }

@@ -11,7 +11,9 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Table(name = "tbl_character")
+@Table(name = "tbl_character",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"name", "image"})
+)
 public class Character {
 
     @Id

@@ -1,5 +1,11 @@
 package com.example.dailyboramspring.domain.episode.service;
 
+import com.example.dailyboramspring.domain.character.domain.Character;
+import com.example.dailyboramspring.domain.character.domain.repository.CharacterRepository;
+import com.example.dailyboramspring.domain.character.exception.CharacterExistsException;
+import com.example.dailyboramspring.domain.character.facade.CharacterFacade;
+import com.example.dailyboramspring.domain.content.domain.Content;
+import com.example.dailyboramspring.domain.content.domain.repository.ContentRepository;
 import com.example.dailyboramspring.domain.episode.domain.Episode;
 import com.example.dailyboramspring.domain.episode.domain.repository.EpisodeRepository;
 import com.example.dailyboramspring.domain.episode.presentation.dto.request.CreateEpisodeRequest;
@@ -14,13 +20,16 @@ import org.springframework.transaction.annotation.Transactional;
 public class CreateEpisodeService {
 
     private final EpisodeRepository episodeRepository;
+    private final CharacterRepository characterRepository;
+    private final ContentRepository contentRepository;
+    private final CharacterFacade characterFacade;
     private final SeriesFacade seriesFacade;
 
     @Transactional
     public void execute(Long seriesId, CreateEpisodeRequest request) {
         Series series = seriesFacade.findById(seriesId);
 
-        episodeRepository.save(
+        Episode episode = episodeRepository.save(
                 Episode.builder()
                         .title(request.getTitle())
                         .cost(request.getCost())
@@ -28,5 +37,32 @@ public class CreateEpisodeService {
                         .series(series)
                         .build()
         );
+
+
+        for(CreateEpisodeRequest.Character_list character_list : request.getCharacter()) {
+            if (characterRepository.findByNameAndImage(character_list.getName(), character_list.getImage()).isPresent()) {
+                throw CharacterExistsException.EXCEPTION;
+            }
+
+            characterRepository.save(
+                    Character.builder()
+                            .image(character_list.getImage())
+                            .name(character_list.getName())
+                            .series(series)
+                            .build()
+            );
+        }
+
+        for(CreateEpisodeRequest.Content_list content_list : request.getContent()) {
+            Character character = characterFacade.findCharacterByNameAndImage(content_list.getName(), content_list.getImage());
+
+            contentRepository.save(
+                    Content.builder()
+                            .character(character)
+                            .episode(episode)
+                            .line(content_list.getLine())
+                            .build()
+            );
+        }
     }
 }

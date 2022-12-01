@@ -30,6 +30,7 @@ public enum ErrorCode {
     LIKE_NOT_FOUND(404, "LIKE-404-1", "Like Not Found"),
 
     CHARACTER_NOT_FOUND(404, "CHARACTER-404-1", "Character Not Found"),
+    CHARACTER_ALREADY_EXISTS(409, "CHARACTER-409-1", "Character Already Exists"),
 
     SERIES_NOT_FOUND(404, "SERIES-404-1", "Series Not Found"),
     EPISODE_NOT_FOUND(404, "EPISODE-404-1", "Episode Not Found"),
