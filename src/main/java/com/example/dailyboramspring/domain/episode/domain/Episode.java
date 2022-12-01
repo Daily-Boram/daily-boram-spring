@@ -32,7 +32,7 @@ public class Episode extends BaseTimeEntity {
     private Integer cost;
 
     @NotNull
-    @Column(columnDefinition = "VARCHAR(500)")
+    @Column(columnDefinition = "VARCHAR(2500)")
     private String image;
 
 }

@@ -29,7 +29,7 @@ public class Character {
     private String name;
 
     @NotNull
-    @Column(columnDefinition = "VARCHAR(500)")
+    @Column(columnDefinition = "VARCHAR(2400)")
     private String image;
 
 }

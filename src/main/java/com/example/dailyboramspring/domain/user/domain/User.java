@@ -40,7 +40,7 @@ public class User {
     private String introduce;
 
     @NotNull
-    @Column(columnDefinition = "VARCHAR(500)")
+    @Column(columnDefinition = "VARCHAR(2500)")
     private String image;
 
     @NotNull
