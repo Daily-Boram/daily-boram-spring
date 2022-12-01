@@ -40,9 +40,9 @@ public class CreateEpisodeService {
 
 
         for(CreateEpisodeRequest.Character_list character_list : request.getCharacter()) {
-            if (characterRepository.findByNameAndImage(character_list.getName(), character_list.getImage()).isPresent()) {
-                throw CharacterExistsException.EXCEPTION;
-            }
+            //if (characterRepository.findByNameAndImage(character_list.getName(), character_list.getImage()).isPresent()) {
+            //    throw CharacterExistsException.EXCEPTION;
+            //}
 
             characterRepository.save(
                     Character.builder()
