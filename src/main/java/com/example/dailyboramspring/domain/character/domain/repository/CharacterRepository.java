@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 
 public interface CharacterRepository extends CrudRepository<Character, Long> {
-    Optional<Character> findByNameAndSeries(String name, Series series);
+    Optional<Character> findByNameAndSeriesAndImage(String name, Series series, String image);
 }
