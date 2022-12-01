@@ -17,8 +17,6 @@ public class CreateEpisodeRequest {
     private Integer cost;
     @NotBlank
     private String image;
-    @NotBlank
-    private String imageContent;
     @NotNull
     private List<Character_list> character;
     @NotNull
