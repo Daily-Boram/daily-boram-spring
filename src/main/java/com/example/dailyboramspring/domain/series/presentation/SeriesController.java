@@ -28,7 +28,7 @@ public class SeriesController {
 
     @GetMapping("/{series-id}")
     @ResponseStatus(HttpStatus.OK)
-    public SeriesDetailResponse getSeriesDetail(@PathVariable("series-id") Long seriesId, @PageableDefault(sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
+    public SeriesDetailResponse getSeriesDetail(@PathVariable("series-id") Long seriesId, Pageable pageable) {
         return getSeriesDetailService.execute(seriesId, pageable);
     }
 }
