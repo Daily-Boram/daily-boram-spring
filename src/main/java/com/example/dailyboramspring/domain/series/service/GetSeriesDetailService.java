@@ -2,6 +2,8 @@ package com.example.dailyboramspring.domain.series.service;
 
 import com.example.dailyboramspring.domain.episode.domain.repository.EpisodeRepository;
 import com.example.dailyboramspring.domain.episode.facade.EpisodeFacade;
+import com.example.dailyboramspring.domain.episodelike.domain.repository.EpisodeLikeRepository;
+import com.example.dailyboramspring.domain.episodelike.facade.EpisodeLikeFacade;
 import com.example.dailyboramspring.domain.genre.domain.repository.GenreRepository;
 import com.example.dailyboramspring.domain.genre.facade.GenreFacade;
 import com.example.dailyboramspring.domain.series.domain.Series;
@@ -30,6 +32,7 @@ public class GetSeriesDetailService {
     private final GenreFacade genreFacade;
     private final UserFacade userFacade;
 
+    private final EpisodeLikeRepository episodeLikeRepository;
     @Transactional(readOnly = true)
     public SeriesDetailResponse execute(Long seriesId, Pageable pageable) {
         User user = userFacade.getCurrentUser();
@@ -43,6 +46,7 @@ public class GetSeriesDetailService {
                         .cost(episode.getCost())
                         .image(episode.getImage())
                         .createdAt(episode.getSeries().getCreatedAt())
+                        .like(episodeLikeRepository.countEpisodeLikeByEpisode(episode))
                         .build()
                 ).collect(Collectors.toList());
 
