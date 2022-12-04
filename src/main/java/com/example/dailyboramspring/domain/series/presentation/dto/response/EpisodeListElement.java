@@ -19,4 +19,6 @@ public class EpisodeListElement {
 
     private LocalDateTime createdAt;
 
+    private Integer like;
+
 }

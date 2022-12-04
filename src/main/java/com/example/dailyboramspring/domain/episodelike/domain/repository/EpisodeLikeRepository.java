@@ -12,4 +12,6 @@ public interface EpisodeLikeRepository extends CrudRepository<EpisodeLike, Episo
     boolean existsEpisodeLikeByUserAndEpisode(User user, Episode episode);
 
     Optional<EpisodeLike> findEpisodeLikeByUserAndEpisode(User user, Episode episode);
+
+    Integer countEpisodeLikeByEpisode(Episode episode);
 }
