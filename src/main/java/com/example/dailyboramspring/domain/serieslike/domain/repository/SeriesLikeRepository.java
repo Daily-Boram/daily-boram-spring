@@ -19,4 +19,6 @@ public interface SeriesLikeRepository extends CrudRepository<SeriesLike, SeriesL
     boolean existsSeriesLikeByUserAndSeries(User user, Series series);
 
     List<SeriesLike> findAllBySeries(Series series);
+
+    List<SeriesLike> deleteAllBySeries(Series series);
 }

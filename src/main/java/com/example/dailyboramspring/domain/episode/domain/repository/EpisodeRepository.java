@@ -17,4 +17,5 @@ public interface EpisodeRepository extends CrudRepository<Episode, Long>, Episod
 
     Boolean existsEpisodeById(Long id);
 
+    List<Episode> deleteAllBySeries(Series series);
 }

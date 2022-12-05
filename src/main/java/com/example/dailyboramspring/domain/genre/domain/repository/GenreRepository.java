@@ -11,4 +11,6 @@ public interface GenreRepository extends CrudRepository<Genre, Long> {
     List<Genre> findAllBySeries(Series series);
 
     Optional<Genre> findByGenre(String genre);
+
+    List<Genre> deleteAllBySeries(Series series);
 }
