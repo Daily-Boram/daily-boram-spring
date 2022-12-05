@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface ContentRepository extends CrudRepository<Content, Long> {
     List<Content> findAllByEpisode(Episode episode);
+
+    List<Content> deleteAllByEpisode(Episode episode);
 }
