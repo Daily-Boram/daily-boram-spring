@@ -15,4 +15,6 @@ public interface EpisodeLikeRepository extends CrudRepository<EpisodeLike, Episo
     Optional<EpisodeLike> findEpisodeLikeByUserAndEpisode(User user, Episode episode);
 
     List<EpisodeLike> deleteAllByEpisode(Episode episode);
+
+    Integer countEpisodeLikeByEpisode(Episode episode);
 }
