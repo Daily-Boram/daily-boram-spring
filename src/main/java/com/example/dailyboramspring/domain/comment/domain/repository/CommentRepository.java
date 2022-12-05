@@ -16,4 +16,6 @@ public interface CommentRepository extends CrudRepository<Comment, Long> {
     Optional<Comment> findCommentById(Long id);
 
     List<Comment> findAllByEpisode(Episode episode);
+
+    List<Comment> deleteAllByEpisode(Episode episode);
 }
