@@ -33,6 +33,7 @@ public class GetMyUserProfileService {
         List<SeriesElement> noticeList = seriesFacade.GetAllSeriesByUser(user)
                 .stream()
                 .map(series -> SeriesElement.builder()
+                        .id(series.getId())
                         .title(series.getTitle())
                         .nickname(user.getNickname())
                         .image(series.getImage())

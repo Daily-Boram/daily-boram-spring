@@ -9,6 +9,8 @@ public class SeriesElement {
 
     private String title;
 
+    private Long id;
+
     private String nickname;
 
     private String image;
