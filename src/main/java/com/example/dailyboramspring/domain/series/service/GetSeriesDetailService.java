@@ -53,6 +53,7 @@ public class GetSeriesDetailService {
         return SeriesDetailResponse
                 .builder()
                 .title(series.getTitle())
+                .summary(series.getSummary())
                 .image(series.getImage())
                 .like(seriesLikeFacade.getCountBySeries(series))
                 .summary(series.getSummary())
