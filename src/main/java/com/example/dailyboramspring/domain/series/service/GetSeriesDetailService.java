@@ -55,6 +55,7 @@ public class GetSeriesDetailService {
                 .title(series.getTitle())
                 .image(series.getImage())
                 .like(seriesLikeFacade.getCountBySeries(series))
+                .summary(series.getSummary())
                 .nickname(series.getUser().getNickname())
                 .isLike(seriesLikeFacade.existsSeriesLike(user, series))
                 .genre(genreFacade.findGenresBySeries(series))
