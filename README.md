@@ -5,7 +5,7 @@
 **GitHub:** https://github.com/Daily-Boram/daily-boram-spring
 
 ## 프로젝트 소개
-**늘보람 (Daily Boram)**은 작가들이 AI 기술을 활용하여 소설 표지 및 등장인물 이미지를 생성하고, 작품을 손쉽게 연재할 수 있도록 지원하는 웹 플랫폼입니다. Stable Diffusion 모델을 기반으로 독창적인 캐릭터 이미지 생성을 돕고, 사용자 친화적인 연재 환경을 제공합니다.
+늘보람 (Daily Boram)은 작가들이 AI 기술을 활용하여 소설 표지 및 등장인물 이미지를 생성하고, 작품을 손쉽게 연재할 수 있도록 지원하는 웹 플랫폼입니다. Stable Diffusion 모델을 기반으로 독창적인 캐릭터 이미지 생성을 돕고, 사용자 친화적인 연재 환경을 제공합니다.
 
 **SOFTWAVE 2022 부스 운영 및 COEX 전시 참가**
 
